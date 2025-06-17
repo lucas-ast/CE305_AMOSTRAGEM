@@ -92,25 +92,61 @@ window.Quarto = {
 </header>
 
 
-<section id="amostragem-aleatória-estratificada-simples" class="level1">
-<h1>Amostragem Aleatória Estratificada Simples</h1>
-<section id="semana-8" class="level3">
-<h3 class="anchored" data-anchor-id="semana-8">Semana 8</h3>
-<section id="aula-01" class="level4">
-<h4 class="anchored" data-anchor-id="aula-01">Aula 01</h4>
-<section id="definição-de-uma-amostra-aleatória-estratificada-simples" class="level5">
-<h5 class="anchored" data-anchor-id="definição-de-uma-amostra-aleatória-estratificada-simples"><strong>Definição de uma Amostra Aleatória Estratificada Simples</strong></h5>
-<p>Amostra Aleatória Estratificada é uma técnica de amostragem probabilística onde a população é dividida em grupos homogêneos chamados estratos, e depois se sorteia uma amostra aleatoria dentro de cada estrato.</p>
+<section id="amostragem-aleatória-estratificada" class="level1">
+<h1>📌 Amostragem Aleatória Estratificada</h1>
+<section id="aula-01---amostragem-aleatória-estratificada-simples" class="level4">
+<h4 class="anchored" data-anchor-id="aula-01---amostragem-aleatória-estratificada-simples"><a href="https://youtu.be/9XBiTrfr1Xc?si=qv7kBLm70NalEdOJ">Aula 01 - Amostragem Aleatória Estratificada Simples</a></h4>
+<section id="definição" class="level5">
+<h5 class="anchored" data-anchor-id="definição">🧮 Definição</h5>
+<p>A <strong>Amostragem Aleatória Estratificada</strong> é uma técnica em que a população é dividida em <strong>estratos</strong> (grupos homogêneos internamente), e se sorteia uma amostra aleatória dentro de cada estrato.</p>
 </section>
 <section id="por-que-usar" class="level5">
-<h5 class="anchored" data-anchor-id="por-que-usar"><strong>Por que usar?</strong></h5>
-<p>Porque às vezes a população é heterogênea como um todo, mas homogênea dentro de certos grupos (os estratos). Ao amostrar cada grupo separadamente, você:</p>
+<h5 class="anchored" data-anchor-id="por-que-usar">🤔 Por que usar?</h5>
 <ul>
-<li><p>Garante representatividade de todos os subgrupos</p></li>
-<li><p>Reduz a variabilidade nas estimativas</p></li>
-<li><p>Pode ter maior precisão com uma amostra do mesmo tamanho</p></li>
+<li>A população pode ser <strong>heterogênea como um todo</strong>, mas <strong>homogênea dentro dos estratos</strong>.</li>
+<li>Garante <strong>representatividade</strong> dos subgrupos.</li>
+<li><strong>Reduz a variabilidade</strong> das estimativas.</li>
+<li>Permite maior <strong>precisão</strong>, mesmo com o mesmo tamanho de amostra.</li>
 </ul>
-<p>Vendo de forma visual como que é a ideia de uma Amostragem Aleatória Estratificada Simples:</p>
+</section>
+<section id="objetivo-da-aula" class="level5">
+<h5 class="anchored" data-anchor-id="objetivo-da-aula">🎯 Objetivo da Aula</h5>
+<p><strong>Estimar <span class="math inline">\(\bar{Y}\)</span></strong>, a <strong>média populacional</strong>.</p>
+<hr>
+</section>
+<section id="definições-e-fórmulas" class="level5">
+<h5 class="anchored" data-anchor-id="definições-e-fórmulas">📊 Definições e Fórmulas</h5>
+</section>
+</section>
+<section id="população-dividida-em-l-estratos" class="level4">
+<h4 class="anchored" data-anchor-id="população-dividida-em-l-estratos">População dividida em <span class="math inline">\(L\)</span> estratos:</h4>
+<p>Para cada estrato <span class="math inline">\(h = 1, 2, \dots, L\)</span>:</p>
+<p><span class="math display">\[
+\begin{align*}
+N_h &amp;= \text{tamanho do estrato } h \\
+n_h &amp;= \text{tamanho da amostra no estrato } h \\
+a_h &amp;= \frac{n_h}{N_h} \quad \text{fração amostral do estrato } h \\
+y_{hi} &amp;= \text{valor da $i$-ésima observação no estrato } h \\
+\bar{Y}_h &amp;= \frac{1}{N_h} \sum_{i=1}^{N_h} y_{hi} \quad \text{(média populacional do estrato $h$)} \\
+\bar{y}_h &amp;= \frac{1}{n_h} \sum_{i=1}^{n_h} y_{hi} \quad \text{(média amostral do estrato $h$)} \\
+S_h^2 &amp;= \frac{\sum_{i=1}^{N_h} y_{hi}^2 - \frac{\left( \sum_{i=1}^{N_h} y_{hi} \right)^2}{N_h}}{N_h - 1} \quad \text{(variância populacional do estrato $h$)} \\
+s_h^2 &amp;= \frac{\sum_{i=1}^{n_h} y_{hi}^2 - \frac{\left( \sum_{i=1}^{n_h} y_{hi} \right)^2}{n_h}}{n_h - 1} \quad \text{(variância amostral do estrato $h$)} \\
+W_h &amp;= \frac{N_h}{N} \quad \text{(peso do estrato $h$)}
+\end{align*}
+\]</span></p>
+<hr>
+<section id="observações" class="level5">
+<h5 class="anchored" data-anchor-id="observações">🧠 Observações</h5>
+<ul>
+<li><span class="math inline">\(L\)</span>: número total de estratos.<br>
+</li>
+<li>A estimativa da média geral pondera as médias de cada estrato pelo seu peso <span class="math inline">\(W_h\)</span>.</li>
+<li>A variância dentro de um estrato pode ser estimada com base na amostra (<span class="math inline">\(s_h^2\)</span>) ou na população (<span class="math inline">\(S_h^2\)</span>) — se conhecida.</li>
+</ul>
+<hr>
+</section>
+<section id="ilustração-visual" class="level5">
+<h5 class="anchored" data-anchor-id="ilustração-visual">🖼️ Ilustração Visual</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://bookdown.org/luisfca/docs/img/cap_a_estratificada.PNG" class="img-fluid figure-img"></p>
@@ -118,30 +154,9 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="objetivo-da-aula-01---semana-8" class="level5">
-<h5 class="anchored" data-anchor-id="objetivo-da-aula-01---semana-8"><strong>Objetivo da aula 01 - Semana 8</strong></h5>
-<p>Objetivo dessa aula é estimar o <span class="math inline">\(\bar{Y}\)</span>, que representa a média populacional.</p>
-<p>Para estimar a média das observações do estrato usamos a seguinte fórmula:</p>
-<p><span class="math display">\[
-\bar{Y}_h = \frac{\sum_{i=1}^{N_h}{y_{hi}}}{N_h},\quad \text{representa a média das observações do estrato } h
-\]</span></p>
-<p>Para estimar a variância das observações do estrato usamos a seguinte fórmula: <span class="math display">\[
-S_h^2 = \frac{{\sum_{i=1}^{N_h}{y_{hi}^{2}-{\frac{(\sum_{i=1}^{N_h}{y_{hi}})^2}{N_h}}}}}{N_h - 1}, \quad \text{representa a variância das observações do estrato } h
-\]</span></p>
-<p>Logo abaixo são apresentados alguns componentes para o cálculo da média do estrato <span class="math inline">\(\bar{Y}_h\)</span> e a variância do estrato <span class="math inline">\(S_h^2\)</span>: <span class="math display">\[
-\begin{align*}
-N_h   &amp;= \text{tamanho do estrato } h \\
-n_h   &amp;= \text{tamanho da amostra no estrato } h \\
-\bar{Y}_h &amp;= \text{média no estrato }  h \\
-\bar{y}_h &amp;= \frac{\sum_{i=1}^{n_h}{y_{hi}}}{n_h}, \quad \text{média amostral do estrato} h \\
-s_h^2 &amp;= \frac{{\sum_{i=1}^{n_h}{y_{hi}^{2}-{\frac{(\sum_{i=1}^{n_h}{y_{hi}})^2}{n_h}}}}}{n_h - 1}, \quad \text{representa a variância das observações na amostra} \\
-a_h   &amp;= \frac{n_h}{N_h} = \text{fração amostral do estrato } h
-\end{align*}
-\]</span></p>
-</section>
 </section>
 <section id="aula-02" class="level4">
-<h4 class="anchored" data-anchor-id="aula-02">Aula 02</h4>
+<h4 class="anchored" data-anchor-id="aula-02"><a href="https://youtu.be/3NJADJL4Svo?si=R85zW6jfPnBjBdbF">Aula 02</a></h4>
 <section id="estimador-de-bary" class="level5">
 <h5 class="anchored" data-anchor-id="estimador-de-bary">Estimador de <span class="math inline">\(\bar{Y}\)</span></h5>
 <p>Na AAE (Amostragem Aleatória Estratificada), temos:</p>
@@ -183,7 +198,7 @@ se o plano de amostragem for o de AAS (Amostragem Aleatória Simples) dentro de 
 </section>
 </section>
 <section id="aula-03" class="level4">
-<h4 class="anchored" data-anchor-id="aula-03">Aula 03</h4>
+<h4 class="anchored" data-anchor-id="aula-03"><a href="https://youtu.be/M0MDqW2umlI?si=AGZcT0-_mvv3B76H">Aula 03</a></h4>
 <section id="teorema-2-aae-1" class="level5">
 <h5 class="anchored" data-anchor-id="teorema-2-aae-1">Teorema 2 (AAE)</h5>
 <p>Se as amostras são selecionadas independentemente em cada estrato<br>
@@ -244,7 +259,7 @@ de acordo com o plano de AAS, então:</p>
 </section>
 </section>
 <section id="aula-04" class="level4">
-<h4 class="anchored" data-anchor-id="aula-04">Aula 04</h4>
+<h4 class="anchored" data-anchor-id="aula-04"><a href="https://youtu.be/DeVMl89thg4?si=70GcKmHQk4L99KJf">Aula 04</a></h4>
 <section id="estimativa-do-total-de-empregados-em-microempresas" class="level5">
 <h5 class="anchored" data-anchor-id="estimativa-do-total-de-empregados-em-microempresas">Estimativa do total de empregados em microempresas</h5>
 <p><strong>Objetivo:</strong> Estimar o número total de empregados em microempresas.<br>
@@ -380,16 +395,414 @@ IC_{95\%}(\hat{Y}_{st}) =
 <hr>
 </section>
 </section>
-</section>
 <section id="semana-9" class="level3">
 <h3 class="anchored" data-anchor-id="semana-9">Semana 9</h3>
-</section>
-</section>
-<section id="amostragem-aleatória-estratificada" class="level1">
-<h1>📌 Amostragem Aleatória Estratificada</h1>
+<section id="aula-01---alocação-ótima-na-amostragem-aleatória-estratificada" class="level4">
+<h4 class="anchored" data-anchor-id="aula-01---alocação-ótima-na-amostragem-aleatória-estratificada"><a href="https://youtu.be/9XBiTrfr1Xc?si=UCk9aWXovJ1j8M1T">Aula 01 - 🎯 Alocação ótima na Amostragem Aleatória Estratificada</a></h4>
+<section id="controlando-o-custo" class="level5">
+<h5 class="anchored" data-anchor-id="controlando-o-custo">🔧 Controlando o custo</h5>
 <p><span class="math display">\[
-S_h^2 = \frac{1}{N_h - 1} \left( \sum_{i=1}^{N_h} y_{hi}^2 - \frac{\left( \sum_{i=1}^{N_h} y_{hi} \right)^2}{N_h} \right)
+\eta =
+\frac{
+\left( \mathbb{C} - C_0 \right) \sum_{h=1}^{L} N_h S_h \sqrt{C_h}
+}{
+\sum_{h=1}^{L} N_h S_h \sqrt{C_h}
+}
 \]</span></p>
+<p>ou seja,<br>
+<span class="math inline">\(\eta_h\)</span> pode ser alocada proporcionalmente a:</p>
+<p><span class="math display">\[
+\eta_h =
+n \cdot \frac{
+\frac{W_h S_h}{\sqrt{C_h}}
+}{
+\sum_{j=1}^{L} \frac{W_j S_j}{\sqrt{C_j}}
+}
+\]</span></p>
+<hr>
+</section>
+<section id="controlando-a-precisão" class="level5">
+<h5 class="anchored" data-anchor-id="controlando-a-precisão">🎯 Controlando a precisão</h5>
+<p><span class="math display">\[
+n =
+\frac{
+\left( \sum_{h=1}^{L} \frac{W_h S_h}{\sqrt{C_h}} \right)^2
+}{
+V + \sum_{h=1}^{L} \frac{W_h^2 S_h^2}{N_h}
+}
+\]</span></p>
+<p>em que:</p>
+<p><span class="math display">\[
+V = \left( \frac{\varepsilon}{Z_{1 - \alpha/2}} \right)^2
+\]</span></p>
+<hr>
+</section>
+<section id="cálculo-do-custo-total" class="level5">
+<h5 class="anchored" data-anchor-id="cálculo-do-custo-total">💰 Cálculo do custo total</h5>
+<p><span class="math display">\[
+\mathbb{C} = C_0 + \sum_{h=1}^{L} n_h C_h
+\]</span></p>
+<ul>
+<li><span class="math inline">\(C_0\)</span> = custo fixo total<br>
+</li>
+<li><span class="math inline">\(n_h\)</span> = tamanho da amostra no estrato <span class="math inline">\(h\)</span><br>
+</li>
+<li><span class="math inline">\(C_h\)</span> = custo unitário no estrato <span class="math inline">\(h\)</span></li>
+</ul>
+</section>
+</section>
+<section id="aula-02---amostragem-estratificada-com-controle-de-custo" class="level4">
+<h4 class="anchored" data-anchor-id="aula-02---amostragem-estratificada-com-controle-de-custo"><a href="https://youtu.be/Rhygr9GLUq8?si=9Q-eGcgTM8nv41J1">Aula 02 - Amostragem Estratificada com Controle de Custo</a></h4>
+<section id="objetivo-da-aula-1" class="level5">
+<h5 class="anchored" data-anchor-id="objetivo-da-aula-1">🎯 Objetivo da Aula</h5>
+<p>Estimar a <strong>área média plantada</strong>, <strong>controlando o custo</strong> da amostragem.</p>
+<hr>
+</section>
+<section id="custo-total" class="level5">
+<h5 class="anchored" data-anchor-id="custo-total">🧾 Custo total</h5>
+<p>Suponha: - <span class="math inline">\(C = R\$ 10.000\)</span> (orçamento total) - <span class="math inline">\(C_0 = R\$ 3.000\)</span> (custo fixo/piloto)</p>
+<p>O custo disponível para a coleta de dados é: <span class="math display">\[
+C - C_0 = R\$ 7.000
+\]</span></p>
+<hr>
+</section>
+<section id="fórmulas-para-determinação-de-tamanho-amostral-ótimo" class="level5">
+<h5 class="anchored" data-anchor-id="fórmulas-para-determinação-de-tamanho-amostral-ótimo">🧪 Fórmulas para determinação de tamanho amostral ótimo</h5>
+<p>A fórmula usada para obter o <strong>tamanho total da amostra</strong> (<span class="math inline">\(n\)</span>), sob <strong>controle de custo</strong>, é:</p>
+<p><span class="math display">\[
+\eta = \frac{(C - C_0) \sum_{h=1}^L N_h S_h \sqrt{C_h}}{\left( \sum_{h=1}^L N_h S_h / \sqrt{C_h} \right)^2}
+\]</span></p>
+<hr>
+</section>
+<section id="componentes" class="level5">
+<h5 class="anchored" data-anchor-id="componentes">📘 Componentes:</h5>
+<ul>
+<li><span class="math inline">\(N_h\)</span>: Tamanho do estrato <span class="math inline">\(h\)</span></li>
+<li><span class="math inline">\(S_h\)</span>: Desvio padrão do estrato <span class="math inline">\(h\)</span></li>
+<li><span class="math inline">\(C_h\)</span>: Custo por unidade amostral no estrato <span class="math inline">\(h\)</span></li>
+<li><span class="math inline">\(\eta\)</span>: tamanho ótimo total da amostra</li>
+<li><span class="math inline">\(n_h\)</span>: tamanho da amostra no estrato <span class="math inline">\(h\)</span></li>
+<li><span class="math inline">\(W_h = \frac{N_h}{N}\)</span>: peso do estrato <span class="math inline">\(h\)</span></li>
+<li><span class="math inline">\(W_h \cdot S_h / \sqrt{C_h}\)</span>: ponderador do estrato <span class="math inline">\(h\)</span> na alocação ótima</li>
+</ul>
+<hr>
+</section>
+<section id="exemplo-aplicado-dados-da-lousa" class="level5">
+<h5 class="anchored" data-anchor-id="exemplo-aplicado-dados-da-lousa">🧮 Exemplo aplicado (dados da lousa):</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 32%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Estrato</th>
+<th><span class="math inline">\(N_h\)</span></th>
+<th><span class="math inline">\(S_h\)</span></th>
+<th><span class="math inline">\(C_h\)</span></th>
+<th><span class="math inline">\(N_h S_h / \sqrt{C_h}\)</span></th>
+<th><span class="math inline">\(N_h S_h \sqrt{C_h}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1500</td>
+<td>10</td>
+<td>3</td>
+<td>8660,25</td>
+<td>25.580,76</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2000</td>
+<td>15</td>
+<td>3</td>
+<td>17320,51</td>
+<td>51.961,52</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2500</td>
+<td>20</td>
+<td>6</td>
+<td>20442,41</td>
+<td>122.474,49</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>4000</td>
+<td>5</td>
+<td>3</td>
+<td>8944,27</td>
+<td>44.721,36</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td>10000</td>
+<td>—</td>
+<td>—</td>
+<td><strong>55327,45</strong></td>
+<td><strong>245.138,13</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="cálculo-final-do-tamanho-amostral-ótimo" class="level5">
+<h5 class="anchored" data-anchor-id="cálculo-final-do-tamanho-amostral-ótimo">✅ Cálculo final do tamanho amostral ótimo:</h5>
+<p><span class="math display">\[
+\eta = \frac{(10000 - 3000) \cdot 55327,45}{245138,13} = \frac{387292,15}{245138,13} \approx \boxed{1581}
+\]</span></p>
+<hr>
+</section>
+<section id="alocação-da-amostra-por-estrato" class="level5">
+<h5 class="anchored" data-anchor-id="alocação-da-amostra-por-estrato">📌 Alocação da amostra por estrato</h5>
+<p>A alocação ótima é feita via:</p>
+<p><span class="math display">\[
+n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{h=1}^L W_h S_h / \sqrt{C_h}}
+\]</span></p>
+<p>Com valores:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estrato</th>
+<th><span class="math inline">\(W_h S_h / \sqrt{C_h}\)</span></th>
+<th><span class="math inline">\(n_h\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0,8660</td>
+<td>247</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1,73205</td>
+<td>495</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2,04124</td>
+<td>583</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0,89443</td>
+<td>256</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>5,53372</strong></td>
+<td><strong>1581</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="verificação-do-custo-total" class="level5">
+<h5 class="anchored" data-anchor-id="verificação-do-custo-total">🧾 Verificação do custo total:</h5>
+<p><span class="math display">\[
+\text{Custo total} = C_0 + 247 \cdot 3 + 495 \cdot 3 + 583 \cdot 6 + 256 \cdot 5 = 10.000
+\]</span></p>
+<p>✅ Tudo bate com o orçamento.</p>
+<hr>
+</section>
+</section>
+<section id="aula-03---amostragem-estratificada-com-controle-de-precisão" class="level4">
+<h4 class="anchored" data-anchor-id="aula-03---amostragem-estratificada-com-controle-de-precisão"><a href="https://youtu.be/mZ43HjlKdUU?si=AwgpCxrERL8yNCKp">Aula 03 - Amostragem Estratificada com Controle de Precisão</a></h4>
+<section id="objetivo-da-aula-2" class="level5">
+<h5 class="anchored" data-anchor-id="objetivo-da-aula-2">🎯 Objetivo da Aula</h5>
+<p>Estimar o <strong>tempo médio de serviço</strong> com <strong>controle da precisão</strong>.</p>
+<hr>
+</section>
+<section id="parâmetros-de-precisão" class="level5">
+<h5 class="anchored" data-anchor-id="parâmetros-de-precisão">📌 Parâmetros de precisão</h5>
+<ul>
+<li>Erro amostral admissível: <span class="math inline">\(\varepsilon = \pm 0{,}5\)</span></li>
+<li>Nível de confiança: <span class="math inline">\(95\%\)</span></li>
+<li>Valor crítico: <span class="math inline">\(z_{0{,}975} = 1{,}96\)</span></li>
+<li>Variância desejada: <span class="math display">\[
+V = \left( \frac{0{,}5}{1{,}96} \right)^2 = 0{,}065
+\]</span></li>
+</ul>
+<hr>
+</section>
+<section id="fórmula-para-o-tamanho-ótimo-da-amostra-com-controle-de-precisão" class="level5">
+<h5 class="anchored" data-anchor-id="fórmula-para-o-tamanho-ótimo-da-amostra-com-controle-de-precisão">🧾 Fórmula para o tamanho ótimo da amostra com controle de precisão</h5>
+<p><span class="math display">\[
+\eta = \frac{
+  \left( \sum_{h=1}^L W_h S_h \sqrt{C_h} \right)
+  \left( \sum_{h=1}^L \frac{W_h S_h}{\sqrt{C_h}} \right)
+}{
+  V + \sum_{h=1}^L \frac{W_h^2 S_h^2}{N_h}
+}
+\]</span></p>
+<hr>
+</section>
+<section id="componentes-1" class="level5">
+<h5 class="anchored" data-anchor-id="componentes-1">📘 Componentes:</h5>
+<ul>
+<li><span class="math inline">\(W_h = \frac{N_h}{N}\)</span>: peso do estrato</li>
+<li><span class="math inline">\(C_h\)</span>: custo por unidade amostral</li>
+<li><span class="math inline">\(S_h\)</span>: desvio padrão do estrato</li>
+<li><span class="math inline">\(V\)</span>: variância desejada</li>
+<li><span class="math inline">\(\eta\)</span>: tamanho total da amostra</li>
+<li><span class="math inline">\(n_h\)</span>: alocação ótima por estrato</li>
+</ul>
+</section>
+<section id="fórmulas-auxiliares-da-lousa" class="level5">
+<h5 class="anchored" data-anchor-id="fórmulas-auxiliares-da-lousa">📐 Fórmulas auxiliares (da lousa):</h5>
+<ul>
+<li><p>Média estratificada estimada: <span class="math display">\[
+\bar{y}_{st} = \sum W_h \bar{y}_h
+\]</span></p></li>
+<li><p>Variância da média estratificada: <span class="math display">\[
+\hat{V}[\bar{y}_{st}] = \sum \frac{W_h^2 S_h^2}{n_h}
+\]</span></p></li>
+<li><p>Intervalo de confiança para <span class="math inline">\(\bar{y}_{st}\)</span>: <span class="math display">\[
+\bar{y}_{st} \pm t \sqrt{\hat{V}[\bar{y}_{st}]}
+\]</span></p></li>
+<li><p>Alocação ótima por estrato: <span class="math display">\[
+n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{i=1}^L W_i S_i / \sqrt{C_i}}
+\]</span></p></li>
+</ul>
+<hr>
+</section>
+<section id="exemplo-aplicado-dados-da-lousa-1" class="level5">
+<h5 class="anchored" data-anchor-id="exemplo-aplicado-dados-da-lousa-1">🧮 Exemplo aplicado (dados da lousa):</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 23%">
+<col style="width: 25%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Estrato</th>
+<th><span class="math inline">\(N_h\)</span></th>
+<th><span class="math inline">\(S_h\)</span></th>
+<th><span class="math inline">\(C_h\)</span></th>
+<th><span class="math inline">\(W_h S_h \sqrt{C_h}\)</span></th>
+<th><span class="math inline">\(W_h S_h / \sqrt{C_h}\)</span></th>
+<th><span class="math inline">\(W_h^2 S_h^2 / N_h\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>5000</td>
+<td>10</td>
+<td>4</td>
+<td>1,25</td>
+<td>1,25</td>
+<td>0,00125</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8000</td>
+<td>8</td>
+<td>9</td>
+<td>1,067</td>
+<td>1,067</td>
+<td>0,002125</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>3000</td>
+<td>10</td>
+<td>16</td>
+<td>0,375</td>
+<td>0,375</td>
+<td>0,000278</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>4000</td>
+<td>9</td>
+<td>4</td>
+<td>0,90</td>
+<td>0,90</td>
+<td>0,00081</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td>20000</td>
+<td>—</td>
+<td>—</td>
+<td><strong>3,592</strong></td>
+<td><strong>3,592</strong></td>
+<td><strong>0,004463</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="cálculo-do-tamanho-amostral-total" class="level5">
+<h5 class="anchored" data-anchor-id="cálculo-do-tamanho-amostral-total">✅ Cálculo do tamanho amostral total:</h5>
+<p><span class="math display">\[
+\eta = \frac{(3,5917) \cdot (24,2)}{0,065 + 0,004409} \approx \frac{86,90914}{0,069409} \approx \boxed{1252}
+\]</span></p>
+<hr>
+</section>
+<section id="alocação-ótima-por-estrato" class="level5">
+<h5 class="anchored" data-anchor-id="alocação-ótima-por-estrato">📊 Alocação ótima por estrato</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estrato</th>
+<th><span class="math inline">\(W_h S_h / \sqrt{C_h}\)</span></th>
+<th><span class="math inline">\(n_h\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1,25</td>
+<td>437</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1,067</td>
+<td>373</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>0,375</td>
+<td>131</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>0,90</td>
+<td>315</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>3,5917</strong></td>
+<td><strong>1256</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="verificação-do-custo-total-1" class="level5">
+<h5 class="anchored" data-anchor-id="verificação-do-custo-total-1">🧾 Verificação do custo total:</h5>
+<p><span class="math display">\[
+\text{Custo total} = C_0 + 437 \cdot 4 + 373 \cdot 9 + 131 \cdot 16 + 315 \cdot 4 = 8461
+\]</span></p>
+<hr>
+</section>
+</section>
+</section>
 </section>
 
 </main>
