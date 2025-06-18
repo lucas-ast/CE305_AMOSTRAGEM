@@ -1,21 +1,17 @@
-
 ---
 title: "Amostragem Aleatória Estratificada"
 author: "Lucas Magalhães"
-format:
-  pdf:
-    pdf-engine: pdflatex
-  html: default
-  docx: default
+format: html
 toc: true
-number-sections: true
-editor: visual
+number-sections: false
+editor: source
 ---
 
 # 📌 Amostragem Aleatória Estratificada
+
 ### Semana 8
 
-#### [Aula 01 - Amostragem Aleatória Estratificada Simples](https://youtu.be/9XBiTrfr1Xc?si=qv7kBLm70NalEdOJ)
+#### [Aula 01 - Amostragem Aleatória Estratificada Simples](https://youtu.be/4MD_3-5wsno?si=4REOOJ8_-uYZEKhj)
 
 ##### 🧮 Definição
 
@@ -23,16 +19,16 @@ A **Amostragem Aleatória Estratificada** é uma técnica em que a população �
 
 ##### 🤔 Por que usar?
 
-* A população pode ser **heterogênea como um todo**, mas **homogênea dentro dos estratos**.
-* Garante **representatividade** dos subgrupos.
-* **Reduz a variabilidade** das estimativas.
-* Permite maior **precisão**, mesmo com o mesmo tamanho de amostra.
+-   A população pode ser **heterogênea como um todo**, mas **homogênea dentro dos estratos**.
+-   Garante **representatividade** dos subgrupos.
+-   **Reduz a variabilidade** das estimativas.
+-   Permite maior **precisão**, mesmo com o mesmo tamanho de amostra.
 
 ##### 🎯 Objetivo da Aula
 
-**Estimar $\bar{Y}$**, a **média populacional**.
+**Estimar** $\bar{Y}$, a **média populacional**.
 
----
+------------------------------------------------------------------------
 
 ##### 📊 Definições e Fórmulas
 
@@ -54,15 +50,15 @@ W_h &= \frac{N_h}{N} \quad \text{(peso do estrato $h$)}
 \end{align*}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 🧠 Observações
 
-* $L$: número total de estratos.  
-* A estimativa da média geral pondera as médias de cada estrato pelo seu peso $W_h$.
-* A variância dentro de um estrato pode ser estimada com base na amostra ($s_h^2$) ou na população ($S_h^2$) — se conhecida.
+-   $L$: número total de estratos.\
+-   A estimativa da média geral pondera as médias de cada estrato pelo seu peso $W_h$.
+-   A variância dentro de um estrato pode ser estimada com base na amostra ($s_h^2$) ou na população ($S_h^2$) — se conhecida.
 
----
+------------------------------------------------------------------------
 
 ##### 🖼️ Ilustração Visual
 
@@ -84,14 +80,14 @@ $$
 W_h = \frac{N_h}{N}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### Teorema 2 (AAE)
 
-$\bar{Y}_{st}$ é um estimador não-viesado de $\bar{Y}$  
+$\bar{Y}_{st}$ é um estimador não-viesado de $\bar{Y}$\
 se o plano de amostragem for o de AAS (Amostragem Aleatória Simples) dentro de cada estrato.
 
----
+------------------------------------------------------------------------
 
 ##### Prova:
 
@@ -123,14 +119,14 @@ $$
 
 ##### Teorema 2 (AAE)
 
-Se as amostras são selecionadas independentemente em cada estrato  
+Se as amostras são selecionadas independentemente em cada estrato\
 de acordo com o plano de AAS, então:
 
 $$
 \mathrm{V}[\bar{y}_{st}] = \frac{1}{N^2} \sum_{h=1}^{L} N_h (N_h - n_h) \frac{S_h^2}{n_h}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 🧠 Prova:
 
@@ -140,7 +136,7 @@ $$
 = \sum_{h=1}^{L} W_h^2 \mathrm{V}[\bar{y}_h] + 2 \sum_{h < d} W_h W_d \mathrm{Cov}[\bar{y}_h, \bar{y}_d]
 $$
 
-Como os estratos são independentes,  
+Como os estratos são independentes,\
 $\mathrm{Cov}[\bar{y}_h, \bar{y}_d] = 0$ para $h \ne d$:
 
 $$
@@ -162,18 +158,18 @@ $$
 = \sum_{h=1}^{L} \frac{N_h (N_h - n_h)}{N^2} \cdot \frac{S_h^2}{n_h}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### Estimador da variância
 
-Pelo Teorema 3 (AAS), se $S_h^2$ é um estimador não-viesado da variância no estrato:
+Pelo Teorema 3 (AAS), se $s_h^2$ é um estimador não-viesado da variância $S_h^2$:
 
 $$
 \widehat{\mathrm{V}}[\bar{y}_{st}] 
-= \frac{1}{N^2} \sum_{h=1}^{L} N_h (N_h - n_h) \frac{S_h^2}{n_h}
+= \frac{1}{N^2} \sum_{h=1}^{L} N_h (N_h - n_h) \frac{s_h^2}{n_h}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### Intervalo de Confiança
 
@@ -183,7 +179,7 @@ $$
 \bar{y}_{st} \pm t_{(1 - \alpha/2)} \cdot \sqrt{\widehat{\mathrm{V}}[\bar{y}_{st}]}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### ✅ Conclusão:
 
@@ -197,18 +193,18 @@ Ou seja, $\bar{Y}_{st}$ é não-viesado.
 
 ##### Estimativa do total de empregados em microempresas
 
-**Objetivo:** Estimar o número total de empregados em microempresas.  
+**Objetivo:** Estimar o número total de empregados em microempresas.\
 **População total:** $N = 12\,000$ distribuídos em 4 regiões.
 
-| Região | $N_h$ | $n_h$ | $\sum y_{hi}$ | $\sum y_{hi}^2$ | $\bar{Y}_h$ | $S_h^2$ | $W_h$ |
-|--------|-------|-------|----------------|------------------|-------------|---------|--------|
-| I      | 3000  | 50    | 750            | 3845             | 5           | 0.6376  | 0.25   |
-| II     | 1500  | 50    | 150            | 452              | 3           | 0.6408  | 0.13   |
-| III    | 5500  | 200   | 900            | 4100             | 4.5         | 0.2513  | 0.46   |
-| IV     | 2000  | 100   | 350            | 1274             | 3.5         | 0.1494  | 0.17   |
-| **Total** | 12000 | 500 |                |                  |             |         |        |
+| Região    | $N_h$ | $n_h$ | $\sum y_{hi}$ | $\sum y_{hi}^2$ | $\bar{y}_h$ | $s_h^2$ | $W_h$ |
+|---------|---------|---------|---------|---------|---------|---------|---------|
+| I         | 3000  | 150    | 750           | 3845            | 5           | 0.6376  | 0.25  |
+| II        | 1500  | 50    | 150           | 452             | 3           | 0.0408  | 0.13  |
+| III       | 5500  | 200   | 900           | 4100            | 4.5         | 0.2513  | 0.46  |
+| IV        | 2000  | 100   | 350           | 1274            | 3.5         | 0.4949   | 0.17  |
+| **Total** | 12000 | 500   |               |                 |             |         |       |
 
----
+------------------------------------------------------------------------
 
 ##### Estimador da média estratificada
 
@@ -216,7 +212,7 @@ $$
 \bar{y}_{st} = 0{,}25 \cdot 5 + 0{,}13 \cdot 3 + 0{,}46 \cdot 4{,}5 + 0{,}17 \cdot 3{,}5 = 4{,}270833
 $$
 
----
+------------------------------------------------------------------------
 
 ##### Estimador do total
 
@@ -224,7 +220,7 @@ $$
 \hat{Y}_{st} = N \cdot \bar{y}_{st} = 12\,000 \cdot 4{,}270833 = 51\,250
 $$
 
----
+------------------------------------------------------------------------
 
 ##### Estimativa da variância do estimador
 
@@ -238,7 +234,7 @@ $$
 = 0{,}00065
 $$
 
----
+------------------------------------------------------------------------
 
 ##### Erro padrão
 
@@ -246,11 +242,11 @@ $$
 \widehat{EP}[\bar{y}_{st}] = \sqrt{0{,}00065} \approx 0{,}0255
 $$
 
----
+------------------------------------------------------------------------
 
 ##### Intervalo de Confiança (95%)
 
-Graus de liberdade:  
+Graus de liberdade:\
 $$
 GL = 500 - 4 = 496 \Rightarrow t_{0{,}975, \, 496} \approx 1{,}96
 $$
@@ -268,7 +264,7 @@ IC_{95\%}(\hat{Y}_{st}) =
 (4{,}2207 \cdot 12\,000,\; 4{,}3208 \cdot 12\,000) = (50\,649;\; 51\,850)
 $$
 
----  
+------------------------------------------------------------------------
 
 ### Semana 9
 
@@ -285,7 +281,7 @@ $$
 }
 $$
 
-ou seja,  
+ou seja,\
 $\eta_h$ pode ser alocada proporcionalmente a:
 
 $$
@@ -297,16 +293,16 @@ n \cdot \frac{
 }
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 🎯 Controlando a precisão
 
 $$
-n = 
-\frac{
-\left( \sum_{h=1}^{L} \frac{W_h S_h}{\sqrt{C_h}} \right)^2
+\eta = \frac{
+  \left( \sum_{h=1}^L W_h S_h \sqrt{C_h} \right)
+  \left( \sum_{h=1}^L \frac{W_h S_h}{\sqrt{C_h}} \right)
 }{
-V + \sum_{h=1}^{L} \frac{W_h^2 S_h^2}{N_h}
+  V + \sum_{h=1}^L \frac{W_h^2 S_h^2}{N_h}
 }
 $$
 
@@ -316,7 +312,7 @@ $$
 V = \left( \frac{\varepsilon}{Z_{1 - \alpha/2}} \right)^2
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 💰 Cálculo do custo total
 
@@ -324,9 +320,9 @@ $$
 \mathbb{C} = C_0 + \sum_{h=1}^{L} n_h C_h
 $$
 
-* $C_0$ = custo fixo total  
-* $n_h$ = tamanho da amostra no estrato $h$  
-* $C_h$ = custo unitário no estrato $h$
+-   $C_0$ = custo fixo total\
+-   $n_h$ = tamanho da amostra no estrato $h$\
+-   $C_h$ = custo unitário no estrato $h$
 
 #### [Aula 02 - Amostragem Estratificada com Controle de Custo](https://youtu.be/Rhygr9GLUq8?si=9Q-eGcgTM8nv41J1)
 
@@ -334,20 +330,17 @@ $$
 
 Estimar a **área média plantada**, **controlando o custo** da amostragem.
 
----
+------------------------------------------------------------------------
 
 ##### 🧾 Custo total
 
-Suponha:
-- $C = R\$ 10.000$ (orçamento total)
-- $C_0 = R\$ 3.000$ (custo fixo/piloto)
+Suponha: - $C = R\$ 10.000$ (orçamento total) - $C_0 = R\$ 3.000$ (custo fixo/piloto)
 
-O custo disponível para a coleta de dados é:
-$$
+O custo disponível para a coleta de dados é: $$
 C - C_0 = R\$ 7.000
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 🧪 Fórmulas para determinação de tamanho amostral ótimo
 
@@ -357,31 +350,31 @@ $$
 \eta = \frac{(C - C_0) \sum_{h=1}^L N_h S_h \sqrt{C_h}}{\left( \sum_{h=1}^L N_h S_h / \sqrt{C_h} \right)^2}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 📘 Componentes:
 
-- $N_h$: Tamanho do estrato $h$
-- $S_h$: Desvio padrão do estrato $h$
-- $C_h$: Custo por unidade amostral no estrato $h$
-- $\eta$: tamanho ótimo total da amostra
-- $n_h$: tamanho da amostra no estrato $h$
-- $W_h = \frac{N_h}{N}$: peso do estrato $h$
-- $W_h \cdot S_h / \sqrt{C_h}$: ponderador do estrato $h$ na alocação ótima
+-   $N_h$: Tamanho do estrato $h$
+-   $S_h$: Desvio padrão do estrato $h$
+-   $C_h$: Custo por unidade amostral no estrato $h$
+-   $\eta$: tamanho ótimo total da amostra
+-   $n_h$: tamanho da amostra no estrato $h$
+-   $W_h = \frac{N_h}{N}$: peso do estrato $h$
+-   $W_h \cdot S_h / \sqrt{C_h}$: ponderador do estrato $h$ na alocação ótima
 
----
+------------------------------------------------------------------------
 
 ##### 🧮 Exemplo aplicado (dados da lousa):
 
-| Estrato | $N_h$ | $S_h$ | $C_h$ | $N_h S_h / \sqrt{C_h}$ | $N_h S_h \sqrt{C_h}$ |
-|---------|-------|-------|-------|--------------------------|------------------------|
-| 1       | 1500  | 10    | 3     | 8660,25                 | 25.580,76             |
-| 2       | 2000  | 15    | 3     | 17320,51                | 51.961,52             |
-| 3       | 2500  | 20    | 6     | 20442,41                | 122.474,49            |
-| 4       | 4000  | 5     | 3     | 8944,27                 | 44.721,36             |
-| **Total** | 10000 |  —    |  —    | **55327,45**            | **245.138,13**         |
+| Estrato   | $N_h$ | $S_h$ | $C_h$ | $N_h S_h / \sqrt{C_h}$ | $N_h S_h \sqrt{C_h}$ |
+|-----------|-----------|-----------|-----------|----------------|--------------|
+| 1         | 1500  | 10    | 3     | 8660,25                | 25.580,76            |
+| 2         | 2000  | 15    | 3     | 17320,51               | 51.961,52            |
+| 3         | 2500  | 20    | 6     | 20442,41               | 122.474,49           |
+| 4         | 4000  | 5     | 3     | 8944,27                | 44.721,36            |
+| **Total** | 10000 | —     | —     | **55327,45**           | **245.138,13**       |
 
----
+------------------------------------------------------------------------
 
 ##### ✅ Cálculo final do tamanho amostral ótimo:
 
@@ -389,7 +382,7 @@ $$
 \eta = \frac{(10000 - 3000) \cdot 55327,45}{245138,13} = \frac{387292,15}{245138,13} \approx \boxed{1581}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 📌 Alocação da amostra por estrato
 
@@ -401,15 +394,15 @@ $$
 
 Com valores:
 
-| Estrato | $W_h S_h / \sqrt{C_h}$ | $n_h$ |
-|---------|------------------------|-------|
-| 1       | 0,8660                 | 247   |
-| 2       | 1,73205                | 495   |
-| 3       | 2,04124                | 583   |
-| 4       | 0,89443                | 256   |
+| Estrato   | $W_h S_h / \sqrt{C_h}$ | $n_h$    |
+|-----------|------------------------|----------|
+| 1         | 0,8660                 | 247      |
+| 2         | 1,73205                | 495      |
+| 3         | 2,04124                | 583      |
+| 4         | 0,89443                | 256      |
 | **Total** | **5,53372**            | **1581** |
 
----
+------------------------------------------------------------------------
 
 ##### 🧾 Verificação do custo total:
 
@@ -419,8 +412,7 @@ $$
 
 ✅ Tudo bate com o orçamento.
 
----
-
+------------------------------------------------------------------------
 
 #### [Aula 03 - Amostragem Estratificada com Controle de Precisão](https://youtu.be/mZ43HjlKdUU?si=AwgpCxrERL8yNCKp)
 
@@ -428,19 +420,18 @@ $$
 
 Estimar o **tempo médio de serviço** com **controle da precisão**.
 
----
+------------------------------------------------------------------------
 
 ##### 📌 Parâmetros de precisão
 
-- Erro amostral admissível: $\varepsilon = \pm 0{,}5$
-- Nível de confiança: $95\%$
-- Valor crítico: $z_{0{,}975} = 1{,}96$
-- Variância desejada:
-  $$
-  V = \left( \frac{0{,}5}{1{,}96} \right)^2 = 0{,}065
-  $$
+-   Erro amostral admissível: $\varepsilon = \pm 0{,}5$
+-   Nível de confiança: $95\%$
+-   Valor crítico: $z_{0{,}975} = 1{,}96$
+-   Variância desejada: $$
+    V = \left( \frac{0{,}5}{1{,}96} \right)^2 = 0{,}065
+    $$
 
----
+------------------------------------------------------------------------
 
 ##### 🧾 Fórmula para o tamanho ótimo da amostra com controle de precisão
 
@@ -453,52 +444,48 @@ $$
 }
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 📘 Componentes:
 
-- $W_h = \frac{N_h}{N}$: peso do estrato
-- $C_h$: custo por unidade amostral
-- $S_h$: desvio padrão do estrato
-- $V$: variância desejada
-- $\eta$: tamanho total da amostra
-- $n_h$: alocação ótima por estrato
+-   $W_h = \frac{N_h}{N}$: peso do estrato
+-   $C_h$: custo por unidade amostral
+-   $S_h$: desvio padrão do estrato
+-   $V$: variância desejada
+-   $\eta$: tamanho total da amostra
+-   $n_h$: alocação ótima por estrato
 
 ##### 📐 Fórmulas auxiliares (da lousa):
 
-- Média estratificada estimada:
-  $$
-  \bar{y}_{st} = \sum W_h \bar{y}_h
-  $$
+-   Média estratificada estimada: $$
+    \bar{y}_{st} = \sum W_h \bar{y}_h
+    $$
 
-- Variância da média estratificada:
-  $$
-  \hat{V}[\bar{y}_{st}] = \sum \frac{W_h^2 S_h^2}{n_h}
-  $$
+-   Variância da média estratificada: $$
+    \hat{V}[\bar{y}_{st}] = \sum \frac{W_h^2 S_h^2}{n_h}
+    $$
 
-- Intervalo de confiança para $\bar{y}_{st}$:
-  $$
-  \bar{y}_{st} \pm t \sqrt{\hat{V}[\bar{y}_{st}]}
-  $$
+-   Intervalo de confiança para $\bar{y}_{st}$: $$
+    \bar{y}_{st} \pm t \sqrt{\hat{V}[\bar{y}_{st}]}
+    $$
 
-- Alocação ótima por estrato:
-  $$
-  n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{i=1}^L W_i S_i / \sqrt{C_i}}
-  $$
+-   Alocação ótima por estrato: $$
+    n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{i=1}^L W_i S_i / \sqrt{C_i}}
+    $$
 
----
+------------------------------------------------------------------------
 
 ##### 🧮 Exemplo aplicado (dados da lousa):
 
 | Estrato | $N_h$ | $S_h$ | $C_h$ | $W_h S_h \sqrt{C_h}$ | $W_h S_h / \sqrt{C_h}$ | $W_h^2 S_h^2 / N_h$ |
-|---------|-------|-------|-------|------------------------|--------------------------|-----------------------|
-| 1       | 5000  | 10    | 4     | 1,25                  | 1,25                    | 0,00125               |
-| 2       | 8000  | 8     | 9     | 1,067                 | 1,067                   | 0,002125              |
-| 3       | 3000  | 10    | 16    | 0,375                 | 0,375                   | 0,000278              |
-| 4       | 4000  | 9     | 4     | 0,90                  | 0,90                    | 0,00081               |
-| **Total** | 20000 | —     | —     | **3,592**              | **3,592**                | **0,004463**          |
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| 1 | 5000 | 10 | 4 | 1,25 | 1,25 | 0,00125 |
+| 2 | 8000 | 8 | 9 | 1,067 | 1,067 | 0,002125 |
+| 3 | 3000 | 10 | 16 | 0,375 | 0,375 | 0,000278 |
+| 4 | 4000 | 9 | 4 | 0,90 | 0,90 | 0,00081 |
+| **Total** | 20000 | — | — | **3,592** | **3,592** | **0,004463** |
 
----
+------------------------------------------------------------------------
 
 ##### ✅ Cálculo do tamanho amostral total:
 
@@ -506,19 +493,19 @@ $$
 \eta = \frac{(3,5917) \cdot (24,2)}{0,065 + 0,004409} \approx \frac{86,90914}{0,069409} \approx \boxed{1252}
 $$
 
----
+------------------------------------------------------------------------
 
 ##### 📊 Alocação ótima por estrato
 
-| Estrato | $W_h S_h / \sqrt{C_h}$ | $n_h$ |
-|---------|------------------------|-------|
-| 1       | 1,25                   | 437   |
-| 2       | 1,067                  | 373   |
-| 3       | 0,375                  | 131   |
-| 4       | 0,90                   | 315   |
-| **Total** | **3,5917**              | **1256** |
+| Estrato   | $W_h S_h / \sqrt{C_h}$ | $n_h$    |
+|-----------|------------------------|----------|
+| 1         | 1,25                   | 437      |
+| 2         | 1,067                  | 373      |
+| 3         | 0,375                  | 131      |
+| 4         | 0,90                   | 315      |
+| **Total** | **3,5917**             | **1256** |
 
----
+------------------------------------------------------------------------
 
 ##### 🧾 Verificação do custo total:
 
@@ -526,6 +513,142 @@ $$
 \text{Custo total} = C_0 + 437 \cdot 4 + 373 \cdot 9 + 131 \cdot 16 + 315 \cdot 4 = 8461
 $$
 
+------------------------------------------------------------------------
+
+### **Teste**
+
+
+### Semana 9
+
+#### Aula 01 – Conceito de Alocação Ótima
+
+##### Objetivo da aula
+
+Definir o conceito de alocação ótima e mostrar as três abordagens possíveis:
+
+1. **Alocação Proporcional**:
+
+   * Tamanho da amostra no estrato proporcional ao tamanho da população no estrato:
+     $n_h = n \cdot \frac{N_h}{N}$
+
+2. **Alocação de Neyman (ou ótima em termos de variância)**:
+
+   * Considera o tamanho e a variabilidade dentro de cada estrato:
+     $n_h = n \cdot \frac{N_h S_h}{\sum N_h S_h}$
+
+3. **Alocação ótima considerando custos**:
+
+   * Leva em conta o custo por unidade em cada estrato:
+     $n_h = n \cdot \frac{N_h S_h / \sqrt{C_h}}{\sum N_h S_h / \sqrt{C_h}}$
+
 ---
 
+#### Aula 02 – Controlando o Custo
 
+##### Objetivo da aula
+
+Controlar o **custo total** da amostragem estratificada, determinando o \*\*tamanho total da amostra **$n$** dado um orçamento fixo $C$.
+
+Fórmula:
+
+$$
+\eta = \frac{(C - C_0) \cdot \sum_{h=1}^{L} N_h S_h / \sqrt{C_h}}{\sum_{h=1}^{L} N_h S_h \sqrt{C_h}}
+$$
+
+Onde:
+
+* $C$: orçamento total disponível,
+* $C_0$: custo fixo (piloto, estrutura etc.),
+* $C_h$: custo por unidade no estrato $h$,
+* $S_h$: desvio padrão do estrato $h$,
+* $N_h$: tamanho da população no estrato $h$.
+
+Com $n$ obtido pela fórmula, alocamos as amostras por:
+
+$$
+ n_h = n \cdot \frac{N_h S_h / \sqrt{C_h}}{\sum N_h S_h / \sqrt{C_h}}
+$$
+
+---
+
+#### Aula 03 – Controlando a Precisão na Amostragem Aleatória Estratificada
+
+##### Objetivo da aula
+
+Controlar a **precisão** da estimativa da média populacional $\bar{Y}_{st}$, determinando o \*\*tamanho ótimo da amostra total **$n$**.
+
+### Fórmula para controle da precisão
+
+$$
+\eta = \frac{
+\left( \sum W_h S_h \sqrt{C_h} \right)\left( \sum \frac{W_h S_h}{\sqrt{C_h}} \right)
+}{
+V + \sum \frac{W_h^2 S_h^2}{N_h}
+}
+$$
+
+Onde:
+
+* $W_h = \frac{N_h}{N}$: fração do estrato $h$,
+* $S_h$: desvio padrão do estrato $h$,
+* $C_h$: custo de observação no estrato $h$,
+* $V = \left( \frac{E}{z} \right)^2$: precisão desejada (erro ao quadrado sobre valor crítico da normal),
+* $N_h$: tamanho da população no estrato $h$.
+
+### Etapas seguintes: Estimando a média e o intervalo de confiança
+
+Após determinar o tamanho da amostra $n$, alocamos as unidades entre os estratos, obtendo $n_h$ por:
+
+$$
+ n_h = n \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum \left( W_h S_h / \sqrt{C_h} \right)}
+$$
+
+Em seguida, realizamos a coleta da amostra em campo e aplicamos as fórmulas abaixo.
+
+### Estimador da média estratificada
+
+$$
+\bar{y}_{st} = \sum W_h \bar{y}_h
+$$
+
+Onde:
+
+* $\bar{y}_h$ é a média da amostra do estrato $h$,
+* $W_h$ é o peso do estrato.
+
+### Estimativa da variância da média estratificada
+
+$$
+V(\bar{y}_{st}) = \sum \left( \frac{W_h^2 S_h^2}{n_h} \right)\left(1 - \frac{n_h}{N_h} \right)
+$$
+
+Se a amostragem for com reposição ou $N$ for muito grande, o termo $\left(1 - \frac{n_h}{N_h}\right)$ pode ser desprezado.
+
+### Intervalo de confiança
+
+$$
+\bar{y}_{st} \pm t \cdot \sqrt{V(\bar{y}_{st})}
+$$
+
+Onde:
+
+* $t$ é o valor crítico da distribuição $t$ de Student (ou normal, para grandes amostras),
+* $\sqrt{V(\bar{y}_{st})}$ é o erro padrão da estimativa.
+
+---
+
+#### Apêndice – Interpretação da Variância e do Desvio Padrão
+
+* A **variância** mede a dispersão dos dados ao redor da média, elevando os desvios ao quadrado.
+* O **desvio padrão** é simplesmente a raiz quadrada da variância.
+
+### Em outras palavras:
+
+> **O desvio padrão mede, em média, o quanto os dados se afastam da média do conjunto.**
+
+Se o **desvio padrão** for:
+
+* **Pequeno** → os dados estão **próximos da média** (pouca dispersão).
+* **Grande** → os dados estão **muito espalhados** em relação à média (muita dispersão).
+
+Essa medida é essencial para entender a confiabilidade das estimativas feitas com base em uma amostra.
