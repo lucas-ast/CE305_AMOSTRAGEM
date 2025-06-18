@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lucas Magalhães">
 
-<title>CE305_EST_AMOSTRAGEM</title>
+<title>Amostragem Aleatória Estratificada</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +34,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="Amostragem Aleatória Estratificada_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Amostragem Aleatória Estratificada_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Amostragem Aleatória Estratificada_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Amostragem Aleatória Estratificada_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Amostragem Aleatória Estratificada_files/libs/bootstrap/bootstrap-9f11b411ed8a9ed7388199b20b46d2e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -67,21 +68,39 @@ window.Quarto = {
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#amostragem-aleatória-estratificada" id="toc-amostragem-aleatória-estratificada" class="nav-link active" data-scroll-target="#amostragem-aleatória-estratificada"><span class="header-section-number">1</span> 📌 Amostragem Aleatória Estratificada</a>
+  <ul class="collapse">
+  <li><a href="#semana-8" id="toc-semana-8" class="nav-link" data-scroll-target="#semana-8"><span class="header-section-number">1.0.1</span> Semana 8</a></li>
+  <li><a href="#semana-9" id="toc-semana-9" class="nav-link" data-scroll-target="#semana-9"><span class="header-section-number">1.0.2</span> Semana 9</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Amostragem-Aleatória-Estratificada.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="Amostragem Aleatória Estratificada.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CE305_EST_AMOSTRAGEM</h1>
+<h1 class="title">Amostragem Aleatória Estratificada</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lucas Magalhães </p>
+          </div>
+  </div>
     
   
     
@@ -92,16 +111,18 @@ window.Quarto = {
 </header>
 
 
-<section id="amostragem-aleatória-estratificada" class="level1">
-<h1>📌 Amostragem Aleatória Estratificada</h1>
-<section id="aula-01---amostragem-aleatória-estratificada-simples" class="level4">
-<h4 class="anchored" data-anchor-id="aula-01---amostragem-aleatória-estratificada-simples"><a href="https://youtu.be/9XBiTrfr1Xc?si=qv7kBLm70NalEdOJ">Aula 01 - Amostragem Aleatória Estratificada Simples</a></h4>
-<section id="definição" class="level5">
-<h5 class="anchored" data-anchor-id="definição">🧮 Definição</h5>
+<section id="amostragem-aleatória-estratificada" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> 📌 Amostragem Aleatória Estratificada</h1>
+<section id="semana-8" class="level3" data-number="1.0.1">
+<h3 data-number="1.0.1" class="anchored" data-anchor-id="semana-8"><span class="header-section-number">1.0.1</span> Semana 8</h3>
+<section id="aula-01---amostragem-aleatória-estratificada-simples" class="level4" data-number="1.0.1.1">
+<h4 data-number="1.0.1.1" class="anchored" data-anchor-id="aula-01---amostragem-aleatória-estratificada-simples"><span class="header-section-number">1.0.1.1</span> <a href="https://youtu.be/9XBiTrfr1Xc?si=qv7kBLm70NalEdOJ">Aula 01 - Amostragem Aleatória Estratificada Simples</a></h4>
+<section id="definição" class="level5" data-number="1.0.1.1.1">
+<h5 data-number="1.0.1.1.1" class="anchored" data-anchor-id="definição"><span class="header-section-number">1.0.1.1.1</span> 🧮 Definição</h5>
 <p>A <strong>Amostragem Aleatória Estratificada</strong> é uma técnica em que a população é dividida em <strong>estratos</strong> (grupos homogêneos internamente), e se sorteia uma amostra aleatória dentro de cada estrato.</p>
 </section>
-<section id="por-que-usar" class="level5">
-<h5 class="anchored" data-anchor-id="por-que-usar">🤔 Por que usar?</h5>
+<section id="por-que-usar" class="level5" data-number="1.0.1.1.2">
+<h5 data-number="1.0.1.1.2" class="anchored" data-anchor-id="por-que-usar"><span class="header-section-number">1.0.1.1.2</span> 🤔 Por que usar?</h5>
 <ul>
 <li>A população pode ser <strong>heterogênea como um todo</strong>, mas <strong>homogênea dentro dos estratos</strong>.</li>
 <li>Garante <strong>representatividade</strong> dos subgrupos.</li>
@@ -109,17 +130,17 @@ window.Quarto = {
 <li>Permite maior <strong>precisão</strong>, mesmo com o mesmo tamanho de amostra.</li>
 </ul>
 </section>
-<section id="objetivo-da-aula" class="level5">
-<h5 class="anchored" data-anchor-id="objetivo-da-aula">🎯 Objetivo da Aula</h5>
+<section id="objetivo-da-aula" class="level5" data-number="1.0.1.1.3">
+<h5 data-number="1.0.1.1.3" class="anchored" data-anchor-id="objetivo-da-aula"><span class="header-section-number">1.0.1.1.3</span> 🎯 Objetivo da Aula</h5>
 <p><strong>Estimar <span class="math inline">\(\bar{Y}\)</span></strong>, a <strong>média populacional</strong>.</p>
 <hr>
 </section>
-<section id="definições-e-fórmulas" class="level5">
-<h5 class="anchored" data-anchor-id="definições-e-fórmulas">📊 Definições e Fórmulas</h5>
+<section id="definições-e-fórmulas" class="level5" data-number="1.0.1.1.4">
+<h5 data-number="1.0.1.1.4" class="anchored" data-anchor-id="definições-e-fórmulas"><span class="header-section-number">1.0.1.1.4</span> 📊 Definições e Fórmulas</h5>
 </section>
 </section>
-<section id="população-dividida-em-l-estratos" class="level4">
-<h4 class="anchored" data-anchor-id="população-dividida-em-l-estratos">População dividida em <span class="math inline">\(L\)</span> estratos:</h4>
+<section id="população-dividida-em-l-estratos" class="level4" data-number="1.0.1.2">
+<h4 data-number="1.0.1.2" class="anchored" data-anchor-id="população-dividida-em-l-estratos"><span class="header-section-number">1.0.1.2</span> População dividida em <span class="math inline">\(L\)</span> estratos:</h4>
 <p>Para cada estrato <span class="math inline">\(h = 1, 2, \dots, L\)</span>:</p>
 <p><span class="math display">\[
 \begin{align*}
@@ -135,8 +156,8 @@ W_h &amp;= \frac{N_h}{N} \quad \text{(peso do estrato $h$)}
 \end{align*}
 \]</span></p>
 <hr>
-<section id="observações" class="level5">
-<h5 class="anchored" data-anchor-id="observações">🧠 Observações</h5>
+<section id="observações" class="level5" data-number="1.0.1.2.1">
+<h5 data-number="1.0.1.2.1" class="anchored" data-anchor-id="observações"><span class="header-section-number">1.0.1.2.1</span> 🧠 Observações</h5>
 <ul>
 <li><span class="math inline">\(L\)</span>: número total de estratos.<br>
 </li>
@@ -145,8 +166,8 @@ W_h &amp;= \frac{N_h}{N} \quad \text{(peso do estrato $h$)}
 </ul>
 <hr>
 </section>
-<section id="ilustração-visual" class="level5">
-<h5 class="anchored" data-anchor-id="ilustração-visual">🖼️ Ilustração Visual</h5>
+<section id="ilustração-visual" class="level5" data-number="1.0.1.2.2">
+<h5 data-number="1.0.1.2.2" class="anchored" data-anchor-id="ilustração-visual"><span class="header-section-number">1.0.1.2.2</span> 🖼️ Ilustração Visual</h5>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://bookdown.org/luisfca/docs/img/cap_a_estratificada.PNG" class="img-fluid figure-img"></p>
@@ -155,10 +176,10 @@ W_h &amp;= \frac{N_h}{N} \quad \text{(peso do estrato $h$)}
 </div>
 </section>
 </section>
-<section id="aula-02" class="level4">
-<h4 class="anchored" data-anchor-id="aula-02"><a href="https://youtu.be/3NJADJL4Svo?si=R85zW6jfPnBjBdbF">Aula 02</a></h4>
-<section id="estimador-de-bary" class="level5">
-<h5 class="anchored" data-anchor-id="estimador-de-bary">Estimador de <span class="math inline">\(\bar{Y}\)</span></h5>
+<section id="aula-02" class="level4" data-number="1.0.1.3">
+<h4 data-number="1.0.1.3" class="anchored" data-anchor-id="aula-02"><span class="header-section-number">1.0.1.3</span> <a href="https://youtu.be/3NJADJL4Svo?si=R85zW6jfPnBjBdbF">Aula 02</a></h4>
+<section id="estimador-de-bary" class="level5" data-number="1.0.1.3.1">
+<h5 data-number="1.0.1.3.1" class="anchored" data-anchor-id="estimador-de-bary"><span class="header-section-number">1.0.1.3.1</span> Estimador de <span class="math inline">\(\bar{Y}\)</span></h5>
 <p>Na AAE (Amostragem Aleatória Estratificada), temos:</p>
 <p><span class="math display">\[
 \bar{Y}_{st} = \sum_{h=1}^{L} W_h \bar{y}_h
@@ -169,14 +190,14 @@ W_h = \frac{N_h}{N}
 \]</span></p>
 <hr>
 </section>
-<section id="teorema-2-aae" class="level5">
-<h5 class="anchored" data-anchor-id="teorema-2-aae">Teorema 2 (AAE)</h5>
+<section id="teorema-2-aae" class="level5" data-number="1.0.1.3.2">
+<h5 data-number="1.0.1.3.2" class="anchored" data-anchor-id="teorema-2-aae"><span class="header-section-number">1.0.1.3.2</span> Teorema 2 (AAE)</h5>
 <p><span class="math inline">\(\bar{Y}_{st}\)</span> é um estimador não-viesado de <span class="math inline">\(\bar{Y}\)</span><br>
 se o plano de amostragem for o de AAS (Amostragem Aleatória Simples) dentro de cada estrato.</p>
 <hr>
 </section>
-<section id="prova" class="level5">
-<h5 class="anchored" data-anchor-id="prova">Prova:</h5>
+<section id="prova" class="level5" data-number="1.0.1.3.3">
+<h5 data-number="1.0.1.3.3" class="anchored" data-anchor-id="prova"><span class="header-section-number">1.0.1.3.3</span> Prova:</h5>
 <p><span class="math display">\[
 \mathbb{E}[\bar{Y}_{st}] = \mathbb{E} \left[ \sum_{h=1}^{L} W_h \bar{y}_h \right]
 \]</span></p>
@@ -197,10 +218,10 @@ se o plano de amostragem for o de AAS (Amostragem Aleatória Simples) dentro de 
 \]</span></p>
 </section>
 </section>
-<section id="aula-03" class="level4">
-<h4 class="anchored" data-anchor-id="aula-03"><a href="https://youtu.be/M0MDqW2umlI?si=AGZcT0-_mvv3B76H">Aula 03</a></h4>
-<section id="teorema-2-aae-1" class="level5">
-<h5 class="anchored" data-anchor-id="teorema-2-aae-1">Teorema 2 (AAE)</h5>
+<section id="aula-03" class="level4" data-number="1.0.1.4">
+<h4 data-number="1.0.1.4" class="anchored" data-anchor-id="aula-03"><span class="header-section-number">1.0.1.4</span> <a href="https://youtu.be/M0MDqW2umlI?si=AGZcT0-_mvv3B76H">Aula 03</a></h4>
+<section id="teorema-2-aae-1" class="level5" data-number="1.0.1.4.1">
+<h5 data-number="1.0.1.4.1" class="anchored" data-anchor-id="teorema-2-aae-1"><span class="header-section-number">1.0.1.4.1</span> Teorema 2 (AAE)</h5>
 <p>Se as amostras são selecionadas independentemente em cada estrato<br>
 de acordo com o plano de AAS, então:</p>
 <p><span class="math display">\[
@@ -208,8 +229,8 @@ de acordo com o plano de AAS, então:</p>
 \]</span></p>
 <hr>
 </section>
-<section id="prova-1" class="level5">
-<h5 class="anchored" data-anchor-id="prova-1">🧠 Prova:</h5>
+<section id="prova-1" class="level5" data-number="1.0.1.4.2">
+<h5 data-number="1.0.1.4.2" class="anchored" data-anchor-id="prova-1"><span class="header-section-number">1.0.1.4.2</span> 🧠 Prova:</h5>
 <p><span class="math display">\[
 \mathrm{V}[\bar{y}_{st}]
 = \mathrm{V} \left[ \sum_{h=1}^{L} W_h \bar{y}_h \right]
@@ -233,8 +254,8 @@ de acordo com o plano de AAS, então:</p>
 \]</span></p>
 <hr>
 </section>
-<section id="estimador-da-variância" class="level5">
-<h5 class="anchored" data-anchor-id="estimador-da-variância">Estimador da variância</h5>
+<section id="estimador-da-variância" class="level5" data-number="1.0.1.4.3">
+<h5 data-number="1.0.1.4.3" class="anchored" data-anchor-id="estimador-da-variância"><span class="header-section-number">1.0.1.4.3</span> Estimador da variância</h5>
 <p>Pelo Teorema 3 (AAS), se <span class="math inline">\(S_h^2\)</span> é um estimador não-viesado da variância no estrato:</p>
 <p><span class="math display">\[
 \widehat{\mathrm{V}}[\bar{y}_{st}]
@@ -242,26 +263,26 @@ de acordo com o plano de AAS, então:</p>
 \]</span></p>
 <hr>
 </section>
-<section id="intervalo-de-confiança" class="level5">
-<h5 class="anchored" data-anchor-id="intervalo-de-confiança">Intervalo de Confiança</h5>
+<section id="intervalo-de-confiança" class="level5" data-number="1.0.1.4.4">
+<h5 data-number="1.0.1.4.4" class="anchored" data-anchor-id="intervalo-de-confiança"><span class="header-section-number">1.0.1.4.4</span> Intervalo de Confiança</h5>
 <p>Se <span class="math inline">\(E[\widehat{\mathrm{V}}(\bar{y}_{st})] = \mathrm{V}[\bar{y}_{st}]\)</span>, então:</p>
 <p><span class="math display">\[
 \bar{y}_{st} \pm t_{(1 - \alpha/2)} \cdot \sqrt{\widehat{\mathrm{V}}[\bar{y}_{st}]}
 \]</span></p>
 <hr>
 </section>
-<section id="conclusão" class="level5">
-<h5 class="anchored" data-anchor-id="conclusão">✅ Conclusão:</h5>
+<section id="conclusão" class="level5" data-number="1.0.1.4.5">
+<h5 data-number="1.0.1.4.5" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">1.0.1.4.5</span> ✅ Conclusão:</h5>
 <p><span class="math display">\[
 \mathbb{E}[\bar{Y}_{st}] = \bar{Y}
 \]</span></p>
 <p>Ou seja, <span class="math inline">\(\bar{Y}_{st}\)</span> é não-viesado.</p>
 </section>
 </section>
-<section id="aula-04" class="level4">
-<h4 class="anchored" data-anchor-id="aula-04"><a href="https://youtu.be/DeVMl89thg4?si=70GcKmHQk4L99KJf">Aula 04</a></h4>
-<section id="estimativa-do-total-de-empregados-em-microempresas" class="level5">
-<h5 class="anchored" data-anchor-id="estimativa-do-total-de-empregados-em-microempresas">Estimativa do total de empregados em microempresas</h5>
+<section id="aula-04" class="level4" data-number="1.0.1.5">
+<h4 data-number="1.0.1.5" class="anchored" data-anchor-id="aula-04"><span class="header-section-number">1.0.1.5</span> <a href="https://youtu.be/DeVMl89thg4?si=70GcKmHQk4L99KJf">Aula 04</a></h4>
+<section id="estimativa-do-total-de-empregados-em-microempresas" class="level5" data-number="1.0.1.5.1">
+<h5 data-number="1.0.1.5.1" class="anchored" data-anchor-id="estimativa-do-total-de-empregados-em-microempresas"><span class="header-section-number">1.0.1.5.1</span> Estimativa do total de empregados em microempresas</h5>
 <p><strong>Objetivo:</strong> Estimar o número total de empregados em microempresas.<br>
 <strong>População total:</strong> <span class="math inline">\(N = 12\,000\)</span> distribuídos em 4 regiões.</p>
 <table class="caption-top table">
@@ -342,22 +363,22 @@ de acordo com o plano de AAS, então:</p>
 </table>
 <hr>
 </section>
-<section id="estimador-da-média-estratificada" class="level5">
-<h5 class="anchored" data-anchor-id="estimador-da-média-estratificada">Estimador da média estratificada</h5>
+<section id="estimador-da-média-estratificada" class="level5" data-number="1.0.1.5.2">
+<h5 data-number="1.0.1.5.2" class="anchored" data-anchor-id="estimador-da-média-estratificada"><span class="header-section-number">1.0.1.5.2</span> Estimador da média estratificada</h5>
 <p><span class="math display">\[
 \bar{y}_{st} = 0{,}25 \cdot 5 + 0{,}13 \cdot 3 + 0{,}46 \cdot 4{,}5 + 0{,}17 \cdot 3{,}5 = 4{,}270833
 \]</span></p>
 <hr>
 </section>
-<section id="estimador-do-total" class="level5">
-<h5 class="anchored" data-anchor-id="estimador-do-total">Estimador do total</h5>
+<section id="estimador-do-total" class="level5" data-number="1.0.1.5.3">
+<h5 data-number="1.0.1.5.3" class="anchored" data-anchor-id="estimador-do-total"><span class="header-section-number">1.0.1.5.3</span> Estimador do total</h5>
 <p><span class="math display">\[
 \hat{Y}_{st} = N \cdot \bar{y}_{st} = 12\,000 \cdot 4{,}270833 = 51\,250
 \]</span></p>
 <hr>
 </section>
-<section id="estimativa-da-variância-do-estimador" class="level5">
-<h5 class="anchored" data-anchor-id="estimativa-da-variância-do-estimador">Estimativa da variância do estimador</h5>
+<section id="estimativa-da-variância-do-estimador" class="level5" data-number="1.0.1.5.4">
+<h5 data-number="1.0.1.5.4" class="anchored" data-anchor-id="estimativa-da-variância-do-estimador"><span class="header-section-number">1.0.1.5.4</span> Estimativa da variância do estimador</h5>
 <p><span class="math display">\[
 \widehat{V}[\bar{y}_{st}] = \frac{1}{12\,000^2}
 \left[
@@ -369,15 +390,15 @@ de acordo com o plano de AAS, então:</p>
 \]</span></p>
 <hr>
 </section>
-<section id="erro-padrão" class="level5">
-<h5 class="anchored" data-anchor-id="erro-padrão">Erro padrão</h5>
+<section id="erro-padrão" class="level5" data-number="1.0.1.5.5">
+<h5 data-number="1.0.1.5.5" class="anchored" data-anchor-id="erro-padrão"><span class="header-section-number">1.0.1.5.5</span> Erro padrão</h5>
 <p><span class="math display">\[
 \widehat{EP}[\bar{y}_{st}] = \sqrt{0{,}00065} \approx 0{,}0255
 \]</span></p>
 <hr>
 </section>
-<section id="intervalo-de-confiança-95" class="level5">
-<h5 class="anchored" data-anchor-id="intervalo-de-confiança-95">Intervalo de Confiança (95%)</h5>
+<section id="intervalo-de-confiança-95" class="level5" data-number="1.0.1.5.6">
+<h5 data-number="1.0.1.5.6" class="anchored" data-anchor-id="intervalo-de-confiança-95"><span class="header-section-number">1.0.1.5.6</span> Intervalo de Confiança (95%)</h5>
 <p>Graus de liberdade:<br>
 <span class="math display">\[
 GL = 500 - 4 = 496 \Rightarrow t_{0{,}975, \, 496} \approx 1{,}96
@@ -395,12 +416,13 @@ IC_{95\%}(\hat{Y}_{st}) =
 <hr>
 </section>
 </section>
-<section id="semana-9" class="level3">
-<h3 class="anchored" data-anchor-id="semana-9">Semana 9</h3>
-<section id="aula-01---alocação-ótima-na-amostragem-aleatória-estratificada" class="level4">
-<h4 class="anchored" data-anchor-id="aula-01---alocação-ótima-na-amostragem-aleatória-estratificada"><a href="https://youtu.be/9XBiTrfr1Xc?si=UCk9aWXovJ1j8M1T">Aula 01 - 🎯 Alocação ótima na Amostragem Aleatória Estratificada</a></h4>
-<section id="controlando-o-custo" class="level5">
-<h5 class="anchored" data-anchor-id="controlando-o-custo">🔧 Controlando o custo</h5>
+</section>
+<section id="semana-9" class="level3" data-number="1.0.2">
+<h3 data-number="1.0.2" class="anchored" data-anchor-id="semana-9"><span class="header-section-number">1.0.2</span> Semana 9</h3>
+<section id="aula-01---alocação-ótima-na-amostragem-aleatória-estratificada" class="level4" data-number="1.0.2.1">
+<h4 data-number="1.0.2.1" class="anchored" data-anchor-id="aula-01---alocação-ótima-na-amostragem-aleatória-estratificada"><span class="header-section-number">1.0.2.1</span> <a href="https://youtu.be/9XBiTrfr1Xc?si=UCk9aWXovJ1j8M1T">Aula 01 - 🎯 Alocação ótima na Amostragem Aleatória Estratificada</a></h4>
+<section id="controlando-o-custo" class="level5" data-number="1.0.2.1.1">
+<h5 data-number="1.0.2.1.1" class="anchored" data-anchor-id="controlando-o-custo"><span class="header-section-number">1.0.2.1.1</span> 🔧 Controlando o custo</h5>
 <p><span class="math display">\[
 \eta =
 \frac{
@@ -421,8 +443,8 @@ n \cdot \frac{
 \]</span></p>
 <hr>
 </section>
-<section id="controlando-a-precisão" class="level5">
-<h5 class="anchored" data-anchor-id="controlando-a-precisão">🎯 Controlando a precisão</h5>
+<section id="controlando-a-precisão" class="level5" data-number="1.0.2.1.2">
+<h5 data-number="1.0.2.1.2" class="anchored" data-anchor-id="controlando-a-precisão"><span class="header-section-number">1.0.2.1.2</span> 🎯 Controlando a precisão</h5>
 <p><span class="math display">\[
 n =
 \frac{
@@ -437,8 +459,8 @@ V = \left( \frac{\varepsilon}{Z_{1 - \alpha/2}} \right)^2
 \]</span></p>
 <hr>
 </section>
-<section id="cálculo-do-custo-total" class="level5">
-<h5 class="anchored" data-anchor-id="cálculo-do-custo-total">💰 Cálculo do custo total</h5>
+<section id="cálculo-do-custo-total" class="level5" data-number="1.0.2.1.3">
+<h5 data-number="1.0.2.1.3" class="anchored" data-anchor-id="cálculo-do-custo-total"><span class="header-section-number">1.0.2.1.3</span> 💰 Cálculo do custo total</h5>
 <p><span class="math display">\[
 \mathbb{C} = C_0 + \sum_{h=1}^{L} n_h C_h
 \]</span></p>
@@ -451,31 +473,31 @@ V = \left( \frac{\varepsilon}{Z_{1 - \alpha/2}} \right)^2
 </ul>
 </section>
 </section>
-<section id="aula-02---amostragem-estratificada-com-controle-de-custo" class="level4">
-<h4 class="anchored" data-anchor-id="aula-02---amostragem-estratificada-com-controle-de-custo"><a href="https://youtu.be/Rhygr9GLUq8?si=9Q-eGcgTM8nv41J1">Aula 02 - Amostragem Estratificada com Controle de Custo</a></h4>
-<section id="objetivo-da-aula-1" class="level5">
-<h5 class="anchored" data-anchor-id="objetivo-da-aula-1">🎯 Objetivo da Aula</h5>
+<section id="aula-02---amostragem-estratificada-com-controle-de-custo" class="level4" data-number="1.0.2.2">
+<h4 data-number="1.0.2.2" class="anchored" data-anchor-id="aula-02---amostragem-estratificada-com-controle-de-custo"><span class="header-section-number">1.0.2.2</span> <a href="https://youtu.be/Rhygr9GLUq8?si=9Q-eGcgTM8nv41J1">Aula 02 - Amostragem Estratificada com Controle de Custo</a></h4>
+<section id="objetivo-da-aula-1" class="level5" data-number="1.0.2.2.1">
+<h5 data-number="1.0.2.2.1" class="anchored" data-anchor-id="objetivo-da-aula-1"><span class="header-section-number">1.0.2.2.1</span> 🎯 Objetivo da Aula</h5>
 <p>Estimar a <strong>área média plantada</strong>, <strong>controlando o custo</strong> da amostragem.</p>
 <hr>
 </section>
-<section id="custo-total" class="level5">
-<h5 class="anchored" data-anchor-id="custo-total">🧾 Custo total</h5>
+<section id="custo-total" class="level5" data-number="1.0.2.2.2">
+<h5 data-number="1.0.2.2.2" class="anchored" data-anchor-id="custo-total"><span class="header-section-number">1.0.2.2.2</span> 🧾 Custo total</h5>
 <p>Suponha: - <span class="math inline">\(C = R\$ 10.000\)</span> (orçamento total) - <span class="math inline">\(C_0 = R\$ 3.000\)</span> (custo fixo/piloto)</p>
 <p>O custo disponível para a coleta de dados é: <span class="math display">\[
 C - C_0 = R\$ 7.000
 \]</span></p>
 <hr>
 </section>
-<section id="fórmulas-para-determinação-de-tamanho-amostral-ótimo" class="level5">
-<h5 class="anchored" data-anchor-id="fórmulas-para-determinação-de-tamanho-amostral-ótimo">🧪 Fórmulas para determinação de tamanho amostral ótimo</h5>
+<section id="fórmulas-para-determinação-de-tamanho-amostral-ótimo" class="level5" data-number="1.0.2.2.3">
+<h5 data-number="1.0.2.2.3" class="anchored" data-anchor-id="fórmulas-para-determinação-de-tamanho-amostral-ótimo"><span class="header-section-number">1.0.2.2.3</span> 🧪 Fórmulas para determinação de tamanho amostral ótimo</h5>
 <p>A fórmula usada para obter o <strong>tamanho total da amostra</strong> (<span class="math inline">\(n\)</span>), sob <strong>controle de custo</strong>, é:</p>
 <p><span class="math display">\[
 \eta = \frac{(C - C_0) \sum_{h=1}^L N_h S_h \sqrt{C_h}}{\left( \sum_{h=1}^L N_h S_h / \sqrt{C_h} \right)^2}
 \]</span></p>
 <hr>
 </section>
-<section id="componentes" class="level5">
-<h5 class="anchored" data-anchor-id="componentes">📘 Componentes:</h5>
+<section id="componentes" class="level5" data-number="1.0.2.2.4">
+<h5 data-number="1.0.2.2.4" class="anchored" data-anchor-id="componentes"><span class="header-section-number">1.0.2.2.4</span> 📘 Componentes:</h5>
 <ul>
 <li><span class="math inline">\(N_h\)</span>: Tamanho do estrato <span class="math inline">\(h\)</span></li>
 <li><span class="math inline">\(S_h\)</span>: Desvio padrão do estrato <span class="math inline">\(h\)</span></li>
@@ -487,8 +509,8 @@ C - C_0 = R\$ 7.000
 </ul>
 <hr>
 </section>
-<section id="exemplo-aplicado-dados-da-lousa" class="level5">
-<h5 class="anchored" data-anchor-id="exemplo-aplicado-dados-da-lousa">🧮 Exemplo aplicado (dados da lousa):</h5>
+<section id="exemplo-aplicado-dados-da-lousa" class="level5" data-number="1.0.2.2.5">
+<h5 data-number="1.0.2.2.5" class="anchored" data-anchor-id="exemplo-aplicado-dados-da-lousa"><span class="header-section-number">1.0.2.2.5</span> 🧮 Exemplo aplicado (dados da lousa):</h5>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 11%">
@@ -553,15 +575,15 @@ C - C_0 = R\$ 7.000
 </table>
 <hr>
 </section>
-<section id="cálculo-final-do-tamanho-amostral-ótimo" class="level5">
-<h5 class="anchored" data-anchor-id="cálculo-final-do-tamanho-amostral-ótimo">✅ Cálculo final do tamanho amostral ótimo:</h5>
+<section id="cálculo-final-do-tamanho-amostral-ótimo" class="level5" data-number="1.0.2.2.6">
+<h5 data-number="1.0.2.2.6" class="anchored" data-anchor-id="cálculo-final-do-tamanho-amostral-ótimo"><span class="header-section-number">1.0.2.2.6</span> ✅ Cálculo final do tamanho amostral ótimo:</h5>
 <p><span class="math display">\[
 \eta = \frac{(10000 - 3000) \cdot 55327,45}{245138,13} = \frac{387292,15}{245138,13} \approx \boxed{1581}
 \]</span></p>
 <hr>
 </section>
-<section id="alocação-da-amostra-por-estrato" class="level5">
-<h5 class="anchored" data-anchor-id="alocação-da-amostra-por-estrato">📌 Alocação da amostra por estrato</h5>
+<section id="alocação-da-amostra-por-estrato" class="level5" data-number="1.0.2.2.7">
+<h5 data-number="1.0.2.2.7" class="anchored" data-anchor-id="alocação-da-amostra-por-estrato"><span class="header-section-number">1.0.2.2.7</span> 📌 Alocação da amostra por estrato</h5>
 <p>A alocação ótima é feita via:</p>
 <p><span class="math display">\[
 n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{h=1}^L W_h S_h / \sqrt{C_h}}
@@ -605,8 +627,8 @@ n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{h=1}^L W_h S_h / \sqrt{C_h}}
 </table>
 <hr>
 </section>
-<section id="verificação-do-custo-total" class="level5">
-<h5 class="anchored" data-anchor-id="verificação-do-custo-total">🧾 Verificação do custo total:</h5>
+<section id="verificação-do-custo-total" class="level5" data-number="1.0.2.2.8">
+<h5 data-number="1.0.2.2.8" class="anchored" data-anchor-id="verificação-do-custo-total"><span class="header-section-number">1.0.2.2.8</span> 🧾 Verificação do custo total:</h5>
 <p><span class="math display">\[
 \text{Custo total} = C_0 + 247 \cdot 3 + 495 \cdot 3 + 583 \cdot 6 + 256 \cdot 5 = 10.000
 \]</span></p>
@@ -614,15 +636,15 @@ n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{h=1}^L W_h S_h / \sqrt{C_h}}
 <hr>
 </section>
 </section>
-<section id="aula-03---amostragem-estratificada-com-controle-de-precisão" class="level4">
-<h4 class="anchored" data-anchor-id="aula-03---amostragem-estratificada-com-controle-de-precisão"><a href="https://youtu.be/mZ43HjlKdUU?si=AwgpCxrERL8yNCKp">Aula 03 - Amostragem Estratificada com Controle de Precisão</a></h4>
-<section id="objetivo-da-aula-2" class="level5">
-<h5 class="anchored" data-anchor-id="objetivo-da-aula-2">🎯 Objetivo da Aula</h5>
+<section id="aula-03---amostragem-estratificada-com-controle-de-precisão" class="level4" data-number="1.0.2.3">
+<h4 data-number="1.0.2.3" class="anchored" data-anchor-id="aula-03---amostragem-estratificada-com-controle-de-precisão"><span class="header-section-number">1.0.2.3</span> <a href="https://youtu.be/mZ43HjlKdUU?si=AwgpCxrERL8yNCKp">Aula 03 - Amostragem Estratificada com Controle de Precisão</a></h4>
+<section id="objetivo-da-aula-2" class="level5" data-number="1.0.2.3.1">
+<h5 data-number="1.0.2.3.1" class="anchored" data-anchor-id="objetivo-da-aula-2"><span class="header-section-number">1.0.2.3.1</span> 🎯 Objetivo da Aula</h5>
 <p>Estimar o <strong>tempo médio de serviço</strong> com <strong>controle da precisão</strong>.</p>
 <hr>
 </section>
-<section id="parâmetros-de-precisão" class="level5">
-<h5 class="anchored" data-anchor-id="parâmetros-de-precisão">📌 Parâmetros de precisão</h5>
+<section id="parâmetros-de-precisão" class="level5" data-number="1.0.2.3.2">
+<h5 data-number="1.0.2.3.2" class="anchored" data-anchor-id="parâmetros-de-precisão"><span class="header-section-number">1.0.2.3.2</span> 📌 Parâmetros de precisão</h5>
 <ul>
 <li>Erro amostral admissível: <span class="math inline">\(\varepsilon = \pm 0{,}5\)</span></li>
 <li>Nível de confiança: <span class="math inline">\(95\%\)</span></li>
@@ -633,8 +655,8 @@ V = \left( \frac{0{,}5}{1{,}96} \right)^2 = 0{,}065
 </ul>
 <hr>
 </section>
-<section id="fórmula-para-o-tamanho-ótimo-da-amostra-com-controle-de-precisão" class="level5">
-<h5 class="anchored" data-anchor-id="fórmula-para-o-tamanho-ótimo-da-amostra-com-controle-de-precisão">🧾 Fórmula para o tamanho ótimo da amostra com controle de precisão</h5>
+<section id="fórmula-para-o-tamanho-ótimo-da-amostra-com-controle-de-precisão" class="level5" data-number="1.0.2.3.3">
+<h5 data-number="1.0.2.3.3" class="anchored" data-anchor-id="fórmula-para-o-tamanho-ótimo-da-amostra-com-controle-de-precisão"><span class="header-section-number">1.0.2.3.3</span> 🧾 Fórmula para o tamanho ótimo da amostra com controle de precisão</h5>
 <p><span class="math display">\[
 \eta = \frac{
   \left( \sum_{h=1}^L W_h S_h \sqrt{C_h} \right)
@@ -645,8 +667,8 @@ V = \left( \frac{0{,}5}{1{,}96} \right)^2 = 0{,}065
 \]</span></p>
 <hr>
 </section>
-<section id="componentes-1" class="level5">
-<h5 class="anchored" data-anchor-id="componentes-1">📘 Componentes:</h5>
+<section id="componentes-1" class="level5" data-number="1.0.2.3.4">
+<h5 data-number="1.0.2.3.4" class="anchored" data-anchor-id="componentes-1"><span class="header-section-number">1.0.2.3.4</span> 📘 Componentes:</h5>
 <ul>
 <li><span class="math inline">\(W_h = \frac{N_h}{N}\)</span>: peso do estrato</li>
 <li><span class="math inline">\(C_h\)</span>: custo por unidade amostral</li>
@@ -656,8 +678,8 @@ V = \left( \frac{0{,}5}{1{,}96} \right)^2 = 0{,}065
 <li><span class="math inline">\(n_h\)</span>: alocação ótima por estrato</li>
 </ul>
 </section>
-<section id="fórmulas-auxiliares-da-lousa" class="level5">
-<h5 class="anchored" data-anchor-id="fórmulas-auxiliares-da-lousa">📐 Fórmulas auxiliares (da lousa):</h5>
+<section id="fórmulas-auxiliares-da-lousa" class="level5" data-number="1.0.2.3.5">
+<h5 data-number="1.0.2.3.5" class="anchored" data-anchor-id="fórmulas-auxiliares-da-lousa"><span class="header-section-number">1.0.2.3.5</span> 📐 Fórmulas auxiliares (da lousa):</h5>
 <ul>
 <li><p>Média estratificada estimada: <span class="math display">\[
 \bar{y}_{st} = \sum W_h \bar{y}_h
@@ -674,8 +696,8 @@ n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{i=1}^L W_i S_i / \sqrt{C_i}}
 </ul>
 <hr>
 </section>
-<section id="exemplo-aplicado-dados-da-lousa-1" class="level5">
-<h5 class="anchored" data-anchor-id="exemplo-aplicado-dados-da-lousa-1">🧮 Exemplo aplicado (dados da lousa):</h5>
+<section id="exemplo-aplicado-dados-da-lousa-1" class="level5" data-number="1.0.2.3.6">
+<h5 data-number="1.0.2.3.6" class="anchored" data-anchor-id="exemplo-aplicado-dados-da-lousa-1"><span class="header-section-number">1.0.2.3.6</span> 🧮 Exemplo aplicado (dados da lousa):</h5>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 8%">
@@ -747,15 +769,15 @@ n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{i=1}^L W_i S_i / \sqrt{C_i}}
 </table>
 <hr>
 </section>
-<section id="cálculo-do-tamanho-amostral-total" class="level5">
-<h5 class="anchored" data-anchor-id="cálculo-do-tamanho-amostral-total">✅ Cálculo do tamanho amostral total:</h5>
+<section id="cálculo-do-tamanho-amostral-total" class="level5" data-number="1.0.2.3.7">
+<h5 data-number="1.0.2.3.7" class="anchored" data-anchor-id="cálculo-do-tamanho-amostral-total"><span class="header-section-number">1.0.2.3.7</span> ✅ Cálculo do tamanho amostral total:</h5>
 <p><span class="math display">\[
 \eta = \frac{(3,5917) \cdot (24,2)}{0,065 + 0,004409} \approx \frac{86,90914}{0,069409} \approx \boxed{1252}
 \]</span></p>
 <hr>
 </section>
-<section id="alocação-ótima-por-estrato" class="level5">
-<h5 class="anchored" data-anchor-id="alocação-ótima-por-estrato">📊 Alocação ótima por estrato</h5>
+<section id="alocação-ótima-por-estrato" class="level5" data-number="1.0.2.3.8">
+<h5 data-number="1.0.2.3.8" class="anchored" data-anchor-id="alocação-ótima-por-estrato"><span class="header-section-number">1.0.2.3.8</span> 📊 Alocação ótima por estrato</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -794,8 +816,8 @@ n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{i=1}^L W_i S_i / \sqrt{C_i}}
 </table>
 <hr>
 </section>
-<section id="verificação-do-custo-total-1" class="level5">
-<h5 class="anchored" data-anchor-id="verificação-do-custo-total-1">🧾 Verificação do custo total:</h5>
+<section id="verificação-do-custo-total-1" class="level5" data-number="1.0.2.3.9">
+<h5 data-number="1.0.2.3.9" class="anchored" data-anchor-id="verificação-do-custo-total-1"><span class="header-section-number">1.0.2.3.9</span> 🧾 Verificação do custo total:</h5>
 <p><span class="math display">\[
 \text{Custo total} = C_0 + 437 \cdot 4 + 373 \cdot 9 + 131 \cdot 16 + 315 \cdot 4 = 8461
 \]</span></p>

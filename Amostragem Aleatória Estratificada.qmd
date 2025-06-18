@@ -1,8 +1,19 @@
+
 ---
-title: "CE305_EST_AMOSTRAGEM"
-format: html
+title: "Amostragem Aleatória Estratificada"
+author: "Lucas Magalhães"
+format:
+  pdf:
+    pdf-engine: pdflatex
+  html: default
+  docx: default
+toc: true
+number-sections: true
+editor: visual
 ---
+
 # 📌 Amostragem Aleatória Estratificada
+### Semana 8
 
 #### [Aula 01 - Amostragem Aleatória Estratificada Simples](https://youtu.be/9XBiTrfr1Xc?si=qv7kBLm70NalEdOJ)
 
