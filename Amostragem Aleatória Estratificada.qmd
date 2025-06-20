@@ -9,28 +9,28 @@ editor: source
 
 # 📌 Amostragem Aleatória Estratificada
 
-### Semana 8
+## Semana 8
 
-#### [Aula 01 - Amostragem Aleatória Estratificada Simples](https://youtu.be/4MD_3-5wsno?si=4REOOJ8_-uYZEKhj)
+### [Aula 01 - Amostragem Aleatória Estratificada](https://youtu.be/4MD_3-5wsno?si=4REOOJ8_-uYZEKhj)
 
-##### 🧮 Definição
+#### 🧮 Definição
 
 A **Amostragem Aleatória Estratificada** é uma técnica em que a população é dividida em **estratos** (grupos homogêneos internamente), e se sorteia uma amostra aleatória dentro de cada estrato.
 
-##### 🤔 Por que usar?
+#### 🤔 Por que usar?
 
 -   A população pode ser **heterogênea como um todo**, mas **homogênea dentro dos estratos**.
 -   Garante **representatividade** dos subgrupos.
 -   **Reduz a variabilidade** das estimativas.
 -   Permite maior **precisão**, mesmo com o mesmo tamanho de amostra.
 
-##### 🎯 Objetivo da Aula
+#### 🎯 Objetivo da Aula
 
 **Estimar** $\bar{Y}$, a **média populacional**.
 
 ------------------------------------------------------------------------
 
-##### 📊 Definições e Fórmulas
+#### 📊 Definições e Fórmulas
 
 #### População dividida em $L$ estratos:
 
@@ -52,7 +52,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 🧠 Observações
+#### 🧠 Observações
 
 -   $L$: número total de estratos.\
 -   A estimativa da média geral pondera as médias de cada estrato pelo seu peso $W_h$.
@@ -60,13 +60,13 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 🖼️ Ilustração Visual
+#### 🖼️ Ilustração Visual
 
 ![Imagem Ilustrativa](https://bookdown.org/luisfca/docs/img/cap_a_estratificada.PNG)
 
-#### [Aula 02](https://youtu.be/3NJADJL4Svo?si=R85zW6jfPnBjBdbF)
+### [Aula 02 - Estimador de $\bar{Y}$](https://youtu.be/3NJADJL4Svo?si=R85zW6jfPnBjBdbF)
 
-##### Estimador de $\bar{Y}$
+#### Estimador de $\bar{Y}$
 
 Na AAE (Amostragem Aleatória Estratificada), temos:
 
@@ -82,14 +82,14 @@ $$
 
 ------------------------------------------------------------------------
 
-##### Teorema 2 (AAE)
+#### Teorema 2 (AAE)
 
 $\bar{Y}_{st}$ é um estimador não-viesado de $\bar{Y}$\
 se o plano de amostragem for o de AAS (Amostragem Aleatória Simples) dentro de cada estrato.
 
 ------------------------------------------------------------------------
 
-##### Prova:
+#### Prova:
 
 $$
 \mathbb{E}[\bar{Y}_{st}] = \mathbb{E} \left[ \sum_{h=1}^{L} W_h \bar{y}_h \right]
@@ -115,9 +115,9 @@ $$
 = \frac{1}{N} \sum_{i=1}^{N} y_i = \bar{Y}
 $$
 
-#### [Aula 03](https://youtu.be/M0MDqW2umlI?si=AGZcT0-_mvv3B76H)
+### [Aula 03 - Estimador da Variância $S_h^2$](https://youtu.be/M0MDqW2umlI?si=AGZcT0-_mvv3B76H)
 
-##### Teorema 2 (AAE)
+#### Teorema 2 (AAE)
 
 Se as amostras são selecionadas independentemente em cada estrato\
 de acordo com o plano de AAS, então:
@@ -128,7 +128,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 🧠 Prova:
+#### 🧠 Prova:
 
 $$
 \mathrm{V}[\bar{y}_{st}] 
@@ -160,7 +160,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### Estimador da variância
+#### Estimador da variância
 
 Pelo Teorema 3 (AAS), se $s_h^2$ é um estimador não-viesado da variância $S_h^2$:
 
@@ -171,7 +171,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### Intervalo de Confiança
+#### Intervalo de Confiança
 
 Se $E[\widehat{\mathrm{V}}(\bar{y}_{st})] = \mathrm{V}[\bar{y}_{st}]$, então:
 
@@ -181,7 +181,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### ✅ Conclusão:
+#### ✅ Conclusão:
 
 $$
 \mathbb{E}[\bar{Y}_{st}] = \bar{Y}
@@ -189,9 +189,9 @@ $$
 
 Ou seja, $\bar{Y}_{st}$ é não-viesado.
 
-#### [Aula 04](https://youtu.be/DeVMl89thg4?si=70GcKmHQk4L99KJf)
+### [Aula 04 - Exercício](https://youtu.be/DeVMl89thg4?si=70GcKmHQk4L99KJf)
 
-##### Estimativa do total de empregados em microempresas
+#### Estimativa do total de empregados em microempresas
 
 **Objetivo:** Estimar o número total de empregados em microempresas.\
 **População total:** $N = 12\,000$ distribuídos em 4 regiões.
@@ -206,7 +206,7 @@ Ou seja, $\bar{Y}_{st}$ é não-viesado.
 
 ------------------------------------------------------------------------
 
-##### Estimador da média estratificada
+#### Estimador da média estratificada
 
 $$
 \bar{y}_{st} = 0{,}25 \cdot 5 + 0{,}13 \cdot 3 + 0{,}46 \cdot 4{,}5 + 0{,}17 \cdot 3{,}5 = 4{,}270833
@@ -214,7 +214,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### Estimador do total
+#### Estimador do total
 
 $$
 \hat{Y}_{st} = N \cdot \bar{y}_{st} = 12\,000 \cdot 4{,}270833 = 51\,250
@@ -222,7 +222,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### Estimativa da variância do estimador
+#### Estimativa da variância do estimador
 
 $$
 \widehat{V}[\bar{y}_{st}] = \frac{1}{12\,000^2} 
@@ -236,7 +236,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### Erro padrão
+#### Erro padrão
 
 $$
 \widehat{EP}[\bar{y}_{st}] = \sqrt{0{,}00065} \approx 0{,}0255
@@ -244,7 +244,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### Intervalo de Confiança (95%)
+#### Intervalo de Confiança (95%)
 
 Graus de liberdade:\
 $$
@@ -268,9 +268,9 @@ $$
 
 ### Semana 9
 
-#### [Aula 01 - 🎯 Alocação ótima na Amostragem Aleatória Estratificada](https://youtu.be/9XBiTrfr1Xc?si=UCk9aWXovJ1j8M1T)
+### [Aula 01 - 🎯 Alocação ótima na Amostragem Aleatória Estratificada](https://youtu.be/9XBiTrfr1Xc?si=UCk9aWXovJ1j8M1T)
 
-##### 🔧 Controlando o custo
+#### 🔧 Controlando o custo
 
 $$
 \eta = 
@@ -295,7 +295,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 🎯 Controlando a precisão
+#### 🎯 Controlando a precisão
 
 $$
 \eta = \frac{
@@ -314,7 +314,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 💰 Cálculo do custo total
+#### 💰 Cálculo do custo total
 
 $$
 \mathbb{C} = C_0 + \sum_{h=1}^{L} n_h C_h
@@ -324,15 +324,15 @@ $$
 -   $n_h$ = tamanho da amostra no estrato $h$\
 -   $C_h$ = custo unitário no estrato $h$
 
-#### [Aula 02 - Amostragem Estratificada com Controle de Custo](https://youtu.be/Rhygr9GLUq8?si=9Q-eGcgTM8nv41J1)
+### [Aula 02 - Amostragem Estratificada com Controle de Custo](https://youtu.be/Rhygr9GLUq8?si=9Q-eGcgTM8nv41J1)
 
-##### 🎯 Objetivo da Aula
+#### 🎯 Objetivo da Aula
 
 Estimar a **área média plantada**, **controlando o custo** da amostragem.
 
 ------------------------------------------------------------------------
 
-##### 🧾 Custo total
+#### 🧾 Custo total
 
 Suponha: - $C = R\$ 10.000$ (orçamento total) - $C_0 = R\$ 3.000$ (custo fixo/piloto)
 
@@ -342,7 +342,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 🧪 Fórmulas para determinação de tamanho amostral ótimo
+#### 🧪 Fórmulas para determinação de tamanho amostral ótimo
 
 A fórmula usada para obter o **tamanho total da amostra** ($n$), sob **controle de custo**, é:
 
@@ -352,7 +352,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 📘 Componentes:
+#### 📘 Componentes:
 
 -   $N_h$: Tamanho do estrato $h$
 -   $S_h$: Desvio padrão do estrato $h$
@@ -364,7 +364,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 🧮 Exemplo aplicado (dados da lousa):
+#### 🧮 Exemplo aplicado (dados da lousa):
 
 | Estrato   | $N_h$ | $S_h$ | $C_h$ | $N_h S_h / \sqrt{C_h}$ | $N_h S_h \sqrt{C_h}$ |
 |-----------|-----------|-----------|-----------|----------------|--------------|
@@ -376,7 +376,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### ✅ Cálculo final do tamanho amostral ótimo:
+#### ✅ Cálculo final do tamanho amostral ótimo:
 
 $$
 \eta = \frac{(10000 - 3000) \cdot 55327,45}{245138,13} = \frac{387292,15}{245138,13} \approx \boxed{1581}
@@ -384,7 +384,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 📌 Alocação da amostra por estrato
+#### 📌 Alocação da amostra por estrato
 
 A alocação ótima é feita via:
 
@@ -404,7 +404,7 @@ Com valores:
 
 ------------------------------------------------------------------------
 
-##### 🧾 Verificação do custo total:
+#### 🧾 Verificação do custo total:
 
 $$
 \text{Custo total} = C_0 + 247 \cdot 3 + 495 \cdot 3 + 583 \cdot 6 + 256 \cdot 5 = 10.000
@@ -414,15 +414,15 @@ $$
 
 ------------------------------------------------------------------------
 
-#### [Aula 03 - Amostragem Estratificada com Controle de Precisão](https://youtu.be/mZ43HjlKdUU?si=AwgpCxrERL8yNCKp)
+### [Aula 03 - Amostragem Estratificada com Controle de Precisão](https://youtu.be/mZ43HjlKdUU?si=AwgpCxrERL8yNCKp)
 
-##### 🎯 Objetivo da Aula
+#### 🎯 Objetivo da Aula
 
 Estimar o **tempo médio de serviço** com **controle da precisão**.
 
 ------------------------------------------------------------------------
 
-##### 📌 Parâmetros de precisão
+#### 📌 Parâmetros de precisão
 
 -   Erro amostral admissível: $\varepsilon = \pm 0{,}5$
 -   Nível de confiança: $95\%$
@@ -433,7 +433,7 @@ Estimar o **tempo médio de serviço** com **controle da precisão**.
 
 ------------------------------------------------------------------------
 
-##### 🧾 Fórmula para o tamanho ótimo da amostra com controle de precisão
+#### 🧾 Fórmula para o tamanho ótimo da amostra com controle de precisão
 
 $$
 \eta = \frac{
@@ -446,7 +446,7 @@ $$
 
 ------------------------------------------------------------------------
 
-##### 📘 Componentes:
+#### 📘 Componentes:
 
 -   $W_h = \frac{N_h}{N}$: peso do estrato
 -   $C_h$: custo por unidade amostral
@@ -455,147 +455,13 @@ $$
 -   $\eta$: tamanho total da amostra
 -   $n_h$: alocação ótima por estrato
 
-##### 📐 Fórmulas auxiliares (da lousa):
+#### 📐 Fórmulas auxiliares (da lousa):
 
 -   Média estratificada estimada: $$
-    \bar{y}_{st} = \sum W_h \bar{y}_h
-    $$
-
--   Variância da média estratificada: $$
-    \hat{V}[\bar{y}_{st}] = \sum \frac{W_h^2 S_h^2}{n_h}
-    $$
-
--   Intervalo de confiança para $\bar{y}_{st}$: $$
-    \bar{y}_{st} \pm t \sqrt{\hat{V}[\bar{y}_{st}]}
-    $$
-
--   Alocação ótima por estrato: $$
-    n_h = \eta \cdot \frac{W_h S_h / \sqrt{C_h}}{\sum_{i=1}^L W_i S_i / \sqrt{C_i}}
-    $$
-
-------------------------------------------------------------------------
-
-##### 🧮 Exemplo aplicado (dados da lousa):
-
-| Estrato | $N_h$ | $S_h$ | $C_h$ | $W_h S_h \sqrt{C_h}$ | $W_h S_h / \sqrt{C_h}$ | $W_h^2 S_h^2 / N_h$ |
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| 1 | 5000 | 10 | 4 | 1,25 | 1,25 | 0,00125 |
-| 2 | 8000 | 8 | 9 | 1,067 | 1,067 | 0,002125 |
-| 3 | 3000 | 10 | 16 | 0,375 | 0,375 | 0,000278 |
-| 4 | 4000 | 9 | 4 | 0,90 | 0,90 | 0,00081 |
-| **Total** | 20000 | — | — | **3,592** | **3,592** | **0,004463** |
-
-------------------------------------------------------------------------
-
-##### ✅ Cálculo do tamanho amostral total:
-
-$$
-\eta = \frac{(3,5917) \cdot (24,2)}{0,065 + 0,004409} \approx \frac{86,90914}{0,069409} \approx \boxed{1252}
-$$
-
-------------------------------------------------------------------------
-
-##### 📊 Alocação ótima por estrato
-
-| Estrato   | $W_h S_h / \sqrt{C_h}$ | $n_h$    |
-|-----------|------------------------|----------|
-| 1         | 1,25                   | 437      |
-| 2         | 1,067                  | 373      |
-| 3         | 0,375                  | 131      |
-| 4         | 0,90                   | 315      |
-| **Total** | **3,5917**             | **1256** |
-
-------------------------------------------------------------------------
-
-##### 🧾 Verificação do custo total:
-
-$$
-\text{Custo total} = C_0 + 437 \cdot 4 + 373 \cdot 9 + 131 \cdot 16 + 315 \cdot 4 = 8461
-$$
-
-------------------------------------------------------------------------
-
-### **Teste**
+    \bar### **Teste**
 
 
-### Semana 9
-
-#### Aula 01 – Conceito de Alocação Ótima
-
-##### Objetivo da aula
-
-Definir o conceito de alocação ótima e mostrar as três abordagens possíveis:
-
-1. **Alocação Proporcional**:
-
-   * Tamanho da amostra no estrato proporcional ao tamanho da população no estrato:
-     $n_h = n \cdot \frac{N_h}{N}$
-
-2. **Alocação de Neyman (ou ótima em termos de variância)**:
-
-   * Considera o tamanho e a variabilidade dentro de cada estrato:
-     $n_h = n \cdot \frac{N_h S_h}{\sum N_h S_h}$
-
-3. **Alocação ótima considerando custos**:
-
-   * Leva em conta o custo por unidade em cada estrato:
-     $n_h = n \cdot \frac{N_h S_h / \sqrt{C_h}}{\sum N_h S_h / \sqrt{C_h}}$
-
----
-
-#### Aula 02 – Controlando o Custo
-
-##### Objetivo da aula
-
-Controlar o **custo total** da amostragem estratificada, determinando o \*\*tamanho total da amostra **$n$** dado um orçamento fixo $C$.
-
-Fórmula:
-
-$$
-\eta = \frac{(C - C_0) \cdot \sum_{h=1}^{L} N_h S_h / \sqrt{C_h}}{\sum_{h=1}^{L} N_h S_h \sqrt{C_h}}
-$$
-
-Onde:
-
-* $C$: orçamento total disponível,
-* $C_0$: custo fixo (piloto, estrutura etc.),
-* $C_h$: custo por unidade no estrato $h$,
-* $S_h$: desvio padrão do estrato $h$,
-* $N_h$: tamanho da população no estrato $h$.
-
-Com $n$ obtido pela fórmula, alocamos as amostras por:
-
-$$
- n_h = n \cdot \frac{N_h S_h / \sqrt{C_h}}{\sum N_h S_h / \sqrt{C_h}}
-$$
-
----
-
-#### Aula 03 – Controlando a Precisão na Amostragem Aleatória Estratificada
-
-##### Objetivo da aula
-
-Controlar a **precisão** da estimativa da média populacional $\bar{Y}_{st}$, determinando o \*\*tamanho ótimo da amostra total **$n$**.
-
-### Fórmula para controle da precisão
-
-$$
-\eta = \frac{
-\left( \sum W_h S_h \sqrt{C_h} \right)\left( \sum \frac{W_h S_h}{\sqrt{C_h}} \right)
-}{
-V + \sum \frac{W_h^2 S_h^2}{N_h}
-}
-$$
-
-Onde:
-
-* $W_h = \frac{N_h}{N}$: fração do estrato $h$,
-* $S_h$: desvio padrão do estrato $h$,
-* $C_h$: custo de observação no estrato $h$,
-* $V = \left( \frac{E}{z} \right)^2$: precisão desejada (erro ao quadrado sobre valor crítico da normal),
-* $N_h$: tamanho da população no estrato $h$.
-
-### Etapas seguintes: Estimando a média e o intervalo de confiança
+#### Etapas seguintes: Estimando a média e o intervalo de confiança
 
 Após determinar o tamanho da amostra $n$, alocamos as unidades entre os estratos, obtendo $n_h$ por:
 
@@ -605,7 +471,7 @@ $$
 
 Em seguida, realizamos a coleta da amostra em campo e aplicamos as fórmulas abaixo.
 
-### Estimador da média estratificada
+#### Estimador da média estratificada
 
 $$
 \bar{y}_{st} = \sum W_h \bar{y}_h
@@ -616,7 +482,7 @@ Onde:
 * $\bar{y}_h$ é a média da amostra do estrato $h$,
 * $W_h$ é o peso do estrato.
 
-### Estimativa da variância da média estratificada
+#### Estimativa da variância da média estratificada
 
 $$
 V(\bar{y}_{st}) = \sum \left( \frac{W_h^2 S_h^2}{n_h} \right)\left(1 - \frac{n_h}{N_h} \right)
@@ -624,7 +490,7 @@ $$
 
 Se a amostragem for com reposição ou $N$ for muito grande, o termo $\left(1 - \frac{n_h}{N_h}\right)$ pode ser desprezado.
 
-### Intervalo de confiança
+#### Intervalo de confiança
 
 $$
 \bar{y}_{st} \pm t \cdot \sqrt{V(\bar{y}_{st})}
@@ -637,12 +503,12 @@ Onde:
 
 ---
 
-#### Apêndice – Interpretação da Variância e do Desvio Padrão
+### Apêndice – Interpretação da Variância e do Desvio Padrão
 
 * A **variância** mede a dispersão dos dados ao redor da média, elevando os desvios ao quadrado.
 * O **desvio padrão** é simplesmente a raiz quadrada da variância.
 
-### Em outras palavras:
+#### Em outras palavras:
 
 > **O desvio padrão mede, em média, o quanto os dados se afastam da média do conjunto.**
 
