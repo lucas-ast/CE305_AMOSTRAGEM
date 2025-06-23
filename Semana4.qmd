@@ -1,0 +1,195 @@
+---
+title: "Semana 4"
+author: Lucas Magalhães Ast
+format: html
+toc: true
+---
+
+## Semana 4
+
+## [Aula 01 - Estimador Não Viesado para a Variância Populacional](https://youtu.be/peWgmlJWBec?si=UJhbK2EkglapgHsw)
+
+Nesta aula, vamos demonstrar que o estimador da variância amostral \$S^2\$ é **não viesado** para a variância populacional, usando o **Teorema 3** no contexto da Amostragem Aleatória Simples (AAS).
+
+---
+
+### Teorema 3
+
+O estimador da variância amostral é dado por:
+
+$$
+S^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (y_i - \bar{y})^2
+$$
+
+Queremos mostrar que esse estimador é não viesado para a variância populacional:
+
+$$
+S^2 = \frac{1}{N - 1} \sum_{i=1}^{N} (y_i - \bar{Y})^2
+$$
+
+Ou seja:
+
+$$
+\mathbb{E}[S^2] = \frac{1}{N - 1} \sum_{i=1}^{N} (y_i - \bar{Y})^2
+$$
+
+---
+
+### Prova do Teorema 3
+
+Partimos da definição do estimador da variância amostral:
+
+$$
+S^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (y_i - \bar{y})^2
+$$
+
+Expandimos utilizando a identidade algébrica:
+
+$$
+(y_i - \bar{y})^2 = \left[ (y_i - \bar{Y}) - (\bar{y} - \bar{Y}) \right]^2
+$$
+
+Substituindo na fórmula:
+
+$$
+S^2 = \frac{1}{n - 1} \sum_{i=1}^{n} \left( (y_i - \bar{Y})^2 - 2(y_i - \bar{Y})(\bar{y} - \bar{Y}) + (\bar{y} - \bar{Y})^2 \right)
+$$
+
+Separando os termos:
+
+$$
+S^2 = \frac{1}{n - 1} \left[
+\sum_{i=1}^{n} (y_i - \bar{Y})^2
+- 2 (\bar{y} - \bar{Y}) \sum_{i=1}^{n} (y_i - \bar{Y})
++ n (\bar{y} - \bar{Y})^2
+\right]
+$$
+
+Como:
+
+$$
+\sum_{i=1}^{n} (y_i - \bar{Y}) = n(\bar{y} - \bar{Y})
+$$
+
+Temos:
+
+$$
+S^2 = \frac{1}{n - 1} \left[
+\sum_{i=1}^{n} (y_i - \bar{Y})^2
+- n (\bar{y} - \bar{Y})^2
+\right]
+$$
+
+---
+
+### Valor Esperado de \$S^2\$
+
+Aplicamos o valor esperado:
+
+$$
+\mathbb{E}[S^2] = \frac{1}{n - 1} \left[
+\mathbb{E} \left( \sum_{i=1}^{n} (y_i - \bar{Y})^2 \right)
+- n \cdot \mathbb{E} \left( (\bar{y} - \bar{Y})^2 \right)
+\right]
+$$
+
+#### Primeiro termo:
+
+$$
+\mathbb{E} \left( \sum_{i=1}^{n} (y_i - \bar{Y})^2 \right)
+= \frac{n}{N} \sum_{i=1}^{N} (y_i - \bar{Y})^2
+= \frac{n}{N} (N - 1) S^2
+$$
+
+#### Segundo termo:
+
+Sabemos que:
+
+$$
+\mathbb{E} \left( (\bar{y} - \bar{Y})^2 \right) = \operatorname{Var}(\bar{y}) = \left( \frac{N - n}{N} \right) \frac{S^2}{n}
+$$
+
+Multiplicando por \$n\$:
+
+$$
+n \cdot \mathbb{E} \left( (\bar{y} - \bar{Y})^2 \right)
+= \left( \frac{N - n}{N} \right) S^2
+$$
+
+---
+
+### Substituindo na fórmula de $\mathbb{E}[S^2]$
+
+$$
+\mathbb{E}[S^2] =
+\frac{1}{n - 1}
+\left[
+\frac{n}{N}(N - 1) S^2
+- \left( \frac{N - n}{N} \right) S^2
+\right]
+$$
+
+Colocando \$S^2\$ em evidência:
+
+$$
+\mathbb{E}[S^2] =
+\frac{S^2}{n - 1} \cdot \left[
+\frac{n(N - 1) - (N - n)}{N}
+\right]
+$$
+
+Resolvendo o numerador:
+
+$$
+n(N - 1) - (N - n) = nN - n - N + n = nN - N = N(n - 1)
+$$
+
+Logo:
+
+$$
+\mathbb{E}[S^2] = \frac{S^2}{n - 1} \cdot \frac{N(n - 1)}{N(n - 1)} = S^2
+$$
+
+---
+
+### Conclusão
+
+O estimador
+
+$$
+S^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (y_i - \bar{y})^2
+$$
+
+é **não viesado** para a variância populacional:
+
+$$
+S^2 = \frac{1}{N - 1} \sum_{i=1}^{N} (y_i - \bar{Y})^2
+$$
+
+ou seja:
+
+$$
+\mathbb{E}[S^2] = S^2
+$$
+
+---
+
+### Corolário: Estimador da variância da média amostral
+
+Sabemos pelo Teorema 2 que:
+
+$$
+\text{Var}(\bar{y}) = \left( \frac{N - n}{N} \right) \frac{S^2}{n}
+$$
+
+Como \$S^2\$ é não viesado, podemos substituí-lo:
+
+$$
+\widehat{\text{Var}}(\bar{y}) = \left( \frac{N - n}{N} \right) \frac{S^2}{n}
+$$
+
+Este é um **estimador não viesado** de \$\text{Var}(\bar{y})\$:
+
+$$
+\mathbb{E}\left[ \widehat{\text{Var}}(\bar{y}) \right] = \left( \frac{N - n}{N} \right) \frac{\mathbb{E}[S^2]}{n} = \text{Var}(\bar{y})
+$$
