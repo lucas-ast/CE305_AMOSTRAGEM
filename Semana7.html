@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lucas Magalhães Ast">
+
+<title>Semana 7</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Semana7_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Semana7_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Semana7_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Semana7_files/libs/quarto-html/popper.min.js"></script>
+<script src="Semana7_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Semana7_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Semana7_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Semana7_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Semana7_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Semana7_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Semana7_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#semana-7" id="toc-semana-7" class="nav-link active" data-scroll-target="#semana-7">Semana 7</a></li>
+  <li><a href="#aula-01---estimador-de-uma-razão" id="toc-aula-01---estimador-de-uma-razão" class="nav-link" data-scroll-target="#aula-01---estimador-de-uma-razão">Aula 01 - Estimador de uma Razão</a>
+  <ul class="collapse">
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">🎯 Objetivo</a></li>
+  <li><a href="#estimador-da-razão-plano-de-aas" id="toc-estimador-da-razão-plano-de-aas" class="nav-link" data-scroll-target="#estimador-da-razão-plano-de-aas">🧪 Estimador da Razão (Plano de AAS)</a></li>
+  <li><a href="#variância-do-estimador" id="toc-variância-do-estimador" class="nav-link" data-scroll-target="#variância-do-estimador">📏 Variância do Estimador</a></li>
+  <li><a href="#erro-padrão" id="toc-erro-padrão" class="nav-link" data-scroll-target="#erro-padrão">📐 Erro Padrão</a></li>
+  <li><a href="#intervalo-de-confiança" id="toc-intervalo-de-confiança" class="nav-link" data-scroll-target="#intervalo-de-confiança">🔒 Intervalo de Confiança</a></li>
+  </ul></li>
+  <li><a href="#aula-02---estimador-de-uma-razão-exemplo-prático" id="toc-aula-02---estimador-de-uma-razão-exemplo-prático" class="nav-link" data-scroll-target="#aula-02---estimador-de-uma-razão-exemplo-prático">Aula 02 - Estimador de uma Razão (Exemplo Prático)</a>
+  <ul class="collapse">
+  <li><a href="#tabela-da-amostra" id="toc-tabela-da-amostra" class="nav-link" data-scroll-target="#tabela-da-amostra">🧾 Tabela da Amostra</a></li>
+  <li><a href="#estimativa-da-razão" id="toc-estimativa-da-razão" class="nav-link" data-scroll-target="#estimativa-da-razão">🔢 Estimativa da Razão</a></li>
+  <li><a href="#variância-de-hatr" id="toc-variância-de-hatr" class="nav-link" data-scroll-target="#variância-de-hatr">📊 Variância de <span class="math inline">\(\hat{R}\)</span></a></li>
+  <li><a href="#erro-padrão-1" id="toc-erro-padrão-1" class="nav-link" data-scroll-target="#erro-padrão-1">🧮 Erro Padrão</a></li>
+  <li><a href="#intervalo-de-confiança-95" id="toc-intervalo-de-confiança-95" class="nav-link" data-scroll-target="#intervalo-de-confiança-95">🔒 Intervalo de Confiança (95%)</a></li>
+  </ul></li>
+  <li><a href="#aula-03---estimador-de-uma-proporção-em-amostragem-por-clusters" id="toc-aula-03---estimador-de-uma-proporção-em-amostragem-por-clusters" class="nav-link" data-scroll-target="#aula-03---estimador-de-uma-proporção-em-amostragem-por-clusters">Aula 03 - Estimador de uma Proporção em Amostragem por Clusters</a>
+  <ul class="collapse">
+  <li><a href="#objetivo-1" id="toc-objetivo-1" class="nav-link" data-scroll-target="#objetivo-1">🎯 Objetivo</a></li>
+  <li><a href="#notação" id="toc-notação" class="nav-link" data-scroll-target="#notação">📘 Notação</a></li>
+  <li><a href="#estimador-da-proporção" id="toc-estimador-da-proporção" class="nav-link" data-scroll-target="#estimador-da-proporção">📐 Estimador da Proporção</a></li>
+  <li><a href="#variância-do-estimador-1" id="toc-variância-do-estimador-1" class="nav-link" data-scroll-target="#variância-do-estimador-1">📊 Variância do Estimador</a></li>
+  <li><a href="#erro-padrão-2" id="toc-erro-padrão-2" class="nav-link" data-scroll-target="#erro-padrão-2">🧮 Erro Padrão</a></li>
+  <li><a href="#intervalo-de-confiança-1" id="toc-intervalo-de-confiança-1" class="nav-link" data-scroll-target="#intervalo-de-confiança-1">📏 Intervalo de Confiança</a></li>
+  <li><a href="#observações" id="toc-observações" class="nav-link" data-scroll-target="#observações">🧠 Observações</a></li>
+  </ul></li>
+  <li><a href="#aula-04---estimador-de-uma-proporção-em-amostragem-por-clusters-exemplo-prático" id="toc-aula-04---estimador-de-uma-proporção-em-amostragem-por-clusters-exemplo-prático" class="nav-link" data-scroll-target="#aula-04---estimador-de-uma-proporção-em-amostragem-por-clusters-exemplo-prático">Aula 04 - Estimador de uma Proporção em Amostragem por Clusters (Exemplo Prático)</a>
+  <ul class="collapse">
+  <li><a href="#dados-da-situação" id="toc-dados-da-situação" class="nav-link" data-scroll-target="#dados-da-situação">🧮 Dados da Situação</a></li>
+  <li><a href="#tabela-resumo" id="toc-tabela-resumo" class="nav-link" data-scroll-target="#tabela-resumo">📊 Tabela Resumo</a></li>
+  <li><a href="#estimativa-da-proporção" id="toc-estimativa-da-proporção" class="nav-link" data-scroll-target="#estimativa-da-proporção">📐 Estimativa da Proporção</a></li>
+  <li><a href="#variância-amostral" id="toc-variância-amostral" class="nav-link" data-scroll-target="#variância-amostral">🧾 Variância Amostral</a></li>
+  <li><a href="#erro-padrão-3" id="toc-erro-padrão-3" class="nav-link" data-scroll-target="#erro-padrão-3">📉 Erro Padrão</a></li>
+  <li><a href="#intervalo-de-confiança-de-95" id="toc-intervalo-de-confiança-de-95" class="nav-link" data-scroll-target="#intervalo-de-confiança-de-95">📏 Intervalo de Confiança de 95%</a></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão">✅ Conclusão</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Semana 7</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lucas Magalhães Ast </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="semana-7" class="level2">
+<h2 class="anchored" data-anchor-id="semana-7">Semana 7</h2>
+</section>
+<section id="aula-01---estimador-de-uma-razão" class="level2">
+<h2 class="anchored" data-anchor-id="aula-01---estimador-de-uma-razão"><a href="https://youtu.be/rf39dDBYPJE?si=hl7WdeGHLWvn6u2m">Aula 01 - Estimador de uma Razão</a></h2>
+<section id="objetivo" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo">🎯 Objetivo</h3>
+<p>Estimar a razão populacional:</p>
+<p><span class="math display">\[
+R = \frac{\sum_{i=1}^{N} y_i}{\sum_{i=1}^{N} x_i} = \frac{\bar{Y}}{\bar{X}}
+\]</span></p>
+<p>Essa razão representa o quociente entre duas variáveis populacionais de interesse. Por exemplo:</p>
+<ul>
+<li><span class="math inline">\(y_i\)</span>: área plantada com soja na fazenda <span class="math inline">\(i\)</span><br>
+</li>
+<li><span class="math inline">\(x_i\)</span>: área total da fazenda <span class="math inline">\(i\)</span></li>
+</ul>
+<p>Logo,</p>
+<p><span class="math display">\[
+R \cdot 100 = \% \text{ da área da fazenda plantada com soja}
+\]</span></p>
+<hr>
+</section>
+<section id="estimador-da-razão-plano-de-aas" class="level3">
+<h3 class="anchored" data-anchor-id="estimador-da-razão-plano-de-aas">🧪 Estimador da Razão (Plano de AAS)</h3>
+<p>Com uma amostra aleatória simples (sem reposição) de tamanho <span class="math inline">\(n\)</span>, o estimador de <span class="math inline">\(R\)</span> é:</p>
+<p><span class="math display">\[
+\hat{R} = \frac{\sum_{i=1}^{n} y_i}{\sum_{i=1}^{n} x_i} = \frac{\bar{y}}{\bar{x}}
+\]</span></p>
+<p>Onde: - <span class="math inline">\(\bar{y}\)</span> é a média amostral de <span class="math inline">\(y\)</span> - <span class="math inline">\(\bar{x}\)</span> é a média amostral de <span class="math inline">\(x\)</span></p>
+<hr>
+</section>
+<section id="variância-do-estimador" class="level3">
+<h3 class="anchored" data-anchor-id="variância-do-estimador">📏 Variância do Estimador</h3>
+<p>A variância do estimador da razão <span class="math inline">\(\hat{R}\)</span> com correção de população finita é:</p>
+<p><span class="math display">\[
+\hat{V[\hat{R}]} = \left( \frac{N - n}{N} \right) \cdot \frac{1}{n \bar{x}^2 } \left[\frac{\sum_{i=1}^{n} y_i^2 - 2\hat{R} \sum_{i=1}^{n} y_i x_i + \hat{R}^2 \sum_{i=1}^{n} x_i^2} {n - 1} \right]
+\]</span></p>
+<hr>
+</section>
+<section id="erro-padrão" class="level3">
+<h3 class="anchored" data-anchor-id="erro-padrão">📐 Erro Padrão</h3>
+<p>O erro padrão do estimador é:</p>
+<p><span class="math display">\[
+\hat{EP[\hat{R}]} = \sqrt{\hat{V[\hat{R}]}}
+\]</span></p>
+<hr>
+</section>
+<section id="intervalo-de-confiança" class="level3">
+<h3 class="anchored" data-anchor-id="intervalo-de-confiança">🔒 Intervalo de Confiança</h3>
+<p>O intervalo de confiança para <span class="math inline">\(R\)</span> com nível de confiança <span class="math inline">\(1 - \alpha\)</span> é:</p>
+<p><span class="math display">\[
+\hat{R} \pm t_{1 - \frac{\alpha}{2}} \cdot \hat{EP[\hat{R}]}
+\]</span></p>
+<p>Onde: - <span class="math inline">\(t_{1 - \frac{\alpha}{2}}\)</span> é o valor da distribuição <span class="math inline">\(t\)</span> de Student com:</p>
+<p><span class="math display">\[
+GL = n - 1
+\]</span></p>
+<p>Representação Ilustrativa: <img src="Imagem/Semana7_aula01_estimacao_razao.png" class="img-fluid" alt="Quadro da aula 01 - Semana 7"> —</p>
+</section>
+</section>
+<section id="aula-02---estimador-de-uma-razão-exemplo-prático" class="level2">
+<h2 class="anchored" data-anchor-id="aula-02---estimador-de-uma-razão-exemplo-prático"><a href="https://youtu.be/iGFQdiK8hEs?si=uqOcp4ie83xSPb7A">Aula 02 - Estimador de uma Razão (Exemplo Prático)</a></h2>
+<p>Vamos estimar a razão entre a área plantada com soja e a área total das fazendas, utilizando uma <strong>amostra aleatória simples de 20 fazendas</strong> entre um total de <span class="math inline">\(N = 1350\)</span> fazendas.</p>
+<hr>
+<section id="tabela-da-amostra" class="level3">
+<h3 class="anchored" data-anchor-id="tabela-da-amostra">🧾 Tabela da Amostra</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 28%">
+<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Fazenda</th>
+<th style="text-align: right;">Área Total <span class="math inline">\(x_i\)</span></th>
+<th style="text-align: right;">Área Plantada <span class="math inline">\(y_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_i^2\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(x_i y_i\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(y_i^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">12.5</td>
+<td style="text-align: right;">576</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">156.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">361</td>
+<td style="text-align: right;">150.1</td>
+<td style="text-align: right;">62.41</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">11.1</td>
+<td style="text-align: right;">729</td>
+<td style="text-align: right;">299.7</td>
+<td style="text-align: right;">123.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">12.3</td>
+<td style="text-align: right;">961</td>
+<td style="text-align: right;">381.3</td>
+<td style="text-align: right;">151.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">144</td>
+<td style="text-align: right;">52.8</td>
+<td style="text-align: right;">19.36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>344</strong></td>
+<td style="text-align: right;"><strong>143.5</strong></td>
+<td style="text-align: right;"><strong>7198</strong></td>
+<td style="text-align: right;"><strong>3025.3</strong></td>
+<td style="text-align: right;"><strong>1287.1</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="estimativa-da-razão" class="level3">
+<h3 class="anchored" data-anchor-id="estimativa-da-razão">🔢 Estimativa da Razão</h3>
+<p><span class="math display">\[
+\hat{R} = \frac{\sum y_i}{\sum x_i} = \frac{143.5}{344} = 0.417 \quad \text{ou} \quad 41.7\%
+\]</span></p>
+<p><span class="math display">\[
+\bar{x} = \frac{\sum x_i}{n} = \frac{344}{20} = 17.2
+\]</span></p>
+<hr>
+</section>
+<section id="variância-de-hatr" class="level3">
+<h3 class="anchored" data-anchor-id="variância-de-hatr">📊 Variância de <span class="math inline">\(\hat{R}\)</span></h3>
+<p>A fórmula da variância é:</p>
+<p><span class="math display">\[
+\hat{V[\hat{R}]} = \left( \frac{N - n}{N} \right) \cdot \frac{1}{n \bar{x}^2 } \left[\frac{\sum_{i=1}^{n} y_i^2 - 2\hat{R} \sum_{i=1}^{n} y_i x_i + \hat{R}^2 \sum_{i=1}^{n} x_i^2} {n - 1} \right]
+\]</span></p>
+<p>Substituindo:</p>
+<ul>
+<li><span class="math inline">\(N = 1350\)</span></li>
+<li><span class="math inline">\(n = 20\)</span></li>
+<li><span class="math inline">\(\bar{x} = 17.2\)</span></li>
+<li><span class="math inline">\(\hat{R} = 0.417\)</span></li>
+<li><span class="math inline">\(\sum y_i^2 = 1287.1\)</span></li>
+<li><span class="math inline">\(\sum x_i y_i = 3025.3\)</span></li>
+<li><span class="math inline">\(\sum x_i^2 = 7198\)</span></li>
+</ul>
+<p><span class="math display">\[
+V[\hat{R}] = \left( \frac{1330}{1350} \right) \cdot \frac{1}{20 \cdot 17,2^2} \cdot
+\left[\frac{1287,1 - 2 \cdot 0,417 \cdot 3025,3 + 0,417^2 \cdot 7198}{20 - 1} \right]
+\]</span></p>
+<p><span class="math display">\[
+\hat{V[\hat{R}]} \approx 0.000144
+\]</span></p>
+<hr>
+</section>
+<section id="erro-padrão-1" class="level3">
+<h3 class="anchored" data-anchor-id="erro-padrão-1">🧮 Erro Padrão</h3>
+<p><span class="math display">\[
+\hat{EP[\hat{R}]} = \sqrt{\hat{V[\hat{R}]}} = \sqrt{0.000144} = 0.012 \quad \text{ou} \quad 1.2\%
+\]</span></p>
+<hr>
+</section>
+<section id="intervalo-de-confiança-95" class="level3">
+<h3 class="anchored" data-anchor-id="intervalo-de-confiança-95">🔒 Intervalo de Confiança (95%)</h3>
+<p>Como <span class="math inline">\(n = 20\)</span>, temos <span class="math inline">\(df = 19\)</span>. O valor crítico da distribuição <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[
+t_{0.975}(19) = 2.093
+\]</span></p>
+<p>Construindo o intervalo:</p>
+<p><span class="math display">\[
+\hat{R} \pm t \cdot \hat{EP[\hat{R}]} = 0.417 \pm 2.093 \cdot 0.012
+\]</span></p>
+<p><span class="math display">\[
+IC = (0.417 - 0.0251;\ 0.417 + 0.0251) = (0.392,\ 0.442)
+\]</span></p>
+<p><strong>Resultado final em porcentagem:</strong></p>
+<p><span class="math display">\[
+IC = (39.2\%,\ 44.2\%)
+\]</span></p>
+<hr>
+<p>📌 <strong>Conclusão</strong>: A estimativa da razão de área plantada com soja é de <strong>41.7%</strong>, com um intervalo de confiança de <strong>95%</strong> que o intervalo entre <strong>39.2% e 44.2%</strong> pode conter a verdadeira razão da área plantada com soja.</p>
+<p><strong>Outra forma de concluir</strong>: A estimativa da razão da área plantada com soja é de <strong>41,7%</strong>, e com <strong>95% de confiança</strong>, afirmamos que a razão populacional verdadeira está entre <strong>39,2% e 44,2%</strong>.</p>
+<p>Representação Ilustrativa: <img src="Imagem/Semana7_aula02_estimacao_razao.png" class="img-fluid" alt="Quadro da aula 02 - Semana 7"></p>
+<hr>
+</section>
+</section>
+<section id="aula-03---estimador-de-uma-proporção-em-amostragem-por-clusters" class="level2">
+<h2 class="anchored" data-anchor-id="aula-03---estimador-de-uma-proporção-em-amostragem-por-clusters"><a href="https://youtu.be/0_owTBBlm_A?si=FQT1ZceO_Tj_JT03">Aula 03 - Estimador de uma Proporção em Amostragem por Clusters</a></h2>
+<p>A amostragem por clusters (ou conglomerados) é uma técnica na qual a população é dividida em grupos naturais (chamados de clusters), e uma amostra aleatória desses grupos é selecionada para observação. Dentro de cada cluster amostrado, todos (ou uma parte) dos elementos são observados.</p>
+<hr>
+<section id="objetivo-1" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-1">🎯 Objetivo</h3>
+<p>Estimar a proporção populacional <span class="math inline">\(P\)</span> de uma determinada característica usando uma amostragem por clusters.</p>
+<hr>
+</section>
+<section id="notação" class="level3">
+<h3 class="anchored" data-anchor-id="notação">📘 Notação</h3>
+<ul>
+<li><span class="math inline">\(N\)</span>: número total de clusters na população<br>
+</li>
+<li><span class="math inline">\(n\)</span>: número de clusters na amostra<br>
+</li>
+<li><span class="math inline">\(m_i\)</span>: número de unidades no cluster <span class="math inline">\(i\)</span><br>
+</li>
+<li><span class="math inline">\(a_i\)</span>: número de unidades com a característica de interesse no cluster <span class="math inline">\(i\)</span><br>
+</li>
+<li><span class="math inline">\(p\)</span>: proporção estimada com base na amostra (proporção amostral)</li>
+</ul>
+<hr>
+</section>
+<section id="estimador-da-proporção" class="level3">
+<h3 class="anchored" data-anchor-id="estimador-da-proporção">📐 Estimador da Proporção</h3>
+<p><span class="math display">\[
+p = \frac{ \sum_{i=1}^{n} a_i }{ \sum_{i=1}^{n} m_i }
+\]</span></p>
+<hr>
+</section>
+<section id="variância-do-estimador-1" class="level3">
+<h3 class="anchored" data-anchor-id="variância-do-estimador-1">📊 Variância do Estimador</h3>
+<p><span class="math display">\[
+\hat{V[p]} = \left( \frac{N - n}{N} \right) \cdot \frac{1}{n \bar{m}^2} \cdot
+\left[
+\frac{ \sum_{i=1}^{n} a_i^2 - 2p \sum_{i=1}^{n} a_i m_i + p^2 \sum_{i=1}^{n} m_i^2 }{n - 1}
+\right]
+\]</span></p>
+<p>onde:</p>
+<ul>
+<li><span class="math inline">\(\bar{m}\)</span> é a média dos tamanhos dos clusters amostrados.</li>
+</ul>
+<hr>
+</section>
+<section id="erro-padrão-2" class="level3">
+<h3 class="anchored" data-anchor-id="erro-padrão-2">🧮 Erro Padrão</h3>
+<p><span class="math display">\[
+\hat{EP[p]} = \sqrt{ \hat{V[p]} }
+\]</span></p>
+<hr>
+</section>
+<section id="intervalo-de-confiança-1" class="level3">
+<h3 class="anchored" data-anchor-id="intervalo-de-confiança-1">📏 Intervalo de Confiança</h3>
+<p><span class="math display">\[
+p \pm t_{1 - \frac{\alpha}{2}} \cdot \hat{EP[p]}
+\]</span></p>
+<p>com <span class="math inline">\(t_{1 - \frac{\alpha}{2}}\)</span> sendo o quantil da t-student com <span class="math inline">\(n - 1\)</span> graus de liberdade.</p>
+<hr>
+</section>
+<section id="observações" class="level3">
+<h3 class="anchored" data-anchor-id="observações">🧠 Observações</h3>
+<ul>
+<li>A amostragem por clusters é útil quando a população está geograficamente dispersa ou o custo de observação individual é alto.</li>
+<li>A variância é geralmente <strong>maior</strong> do que na amostragem aleatória simples, pois os elementos dentro de um mesmo cluster tendem a ser semelhantes.</li>
+</ul>
+<p>Representação Ilustrativa: <img src="Imagem/Semana7_aula03_estimador_proporcao_clusters.png" class="img-fluid" alt="Quadro da aula 03 - Semana 7"></p>
+<hr>
+</section>
+</section>
+<section id="aula-04---estimador-de-uma-proporção-em-amostragem-por-clusters-exemplo-prático" class="level2">
+<h2 class="anchored" data-anchor-id="aula-04---estimador-de-uma-proporção-em-amostragem-por-clusters-exemplo-prático">Aula 04 - Estimador de uma Proporção em Amostragem por Clusters (Exemplo Prático)</h2>
+<hr>
+<section id="dados-da-situação" class="level3">
+<h3 class="anchored" data-anchor-id="dados-da-situação">🧮 Dados da Situação</h3>
+<ul>
+<li><span class="math inline">\(N = \infty\)</span>: total de residências (clusters) na população (para esse exercício vamos supor que o N é um número muito grande)</li>
+<li><span class="math inline">\(n = 30\)</span>: número de residências (clusters) amostradas</li>
+<li>Para cada residência <span class="math inline">\(i\)</span>:
+<ul>
+<li><span class="math inline">\(m_i\)</span>: número de pessoas na residência</li>
+<li><span class="math inline">\(a_i\)</span>: número de pessoas que consultaram um médico no último ano</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="tabela-resumo" class="level3">
+<h3 class="anchored" data-anchor-id="tabela-resumo">📊 Tabela Resumo</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Residência</th>
+<th><span class="math inline">\(m\)</span> (Nº Pessoas)</th>
+<th><span class="math inline">\(a\)</span> (Consultas)</th>
+<th><span class="math inline">\(m^2\)</span></th>
+<th><span class="math inline">\(a^2\)</span></th>
+<th><span class="math inline">\(m a\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>5</td>
+<td>5</td>
+<td>25</td>
+<td>25</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>6</td>
+<td>0</td>
+<td>36</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>3</td>
+<td>0</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="odd">
+<td>29</td>
+<td>2</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td>4</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>104</strong></td>
+<td><strong>30</strong></td>
+<td><strong>404</strong></td>
+<td><strong>86</strong></td>
+<td><strong>113</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="estimativa-da-proporção" class="level3">
+<h3 class="anchored" data-anchor-id="estimativa-da-proporção">📐 Estimativa da Proporção</h3>
+<p><span class="math display">\[
+p = \frac{\sum a_i}{\sum m_i} = \frac{30}{104} = 0{,}289 \quad (28{,}9\%)
+\]</span></p>
+<p><span class="math display">\[
+\bar{m} = \frac{104}{30} \approx 3{,}47
+\]</span></p>
+<hr>
+</section>
+<section id="variância-amostral" class="level3">
+<h3 class="anchored" data-anchor-id="variância-amostral">🧾 Variância Amostral</h3>
+<p>Usamos a fórmula da variância para amostragem por clusters:</p>
+<p><span class="math display">\[
+\hat{V[p]} = \left( \frac{N - n}{N} \right) \cdot \frac{1}{n \bar{m}^2} \cdot
+\left[
+\frac{\sum a_i^2 - 2p \sum a_i m_i + p^2 \sum m_i^2 }{n - 1}
+\right]
+\]</span></p>
+<p>Substituindo os valores:</p>
+<ul>
+<li><span class="math inline">\(N = \infty\)</span></li>
+<li><span class="math inline">\(n = 30\)</span></li>
+<li><span class="math inline">\(\bar{m} = 3{,}47\)</span></li>
+<li><span class="math inline">\(\sum a_i^2 = 86\)</span></li>
+<li><span class="math inline">\(\sum a_i m_i = 113\)</span></li>
+<li><span class="math inline">\(\sum m_i^2 = 404\)</span></li>
+<li><span class="math inline">\(p = 0{,}289\)</span></li>
+</ul>
+<p><span class="math display">\[
+\hat{V[p]} = \left( \frac{\infty - 30}{\infty} \right) \cdot \frac{1}{20 \cdot 3,47^2} \cdot
+\left[
+\frac{86 - 2 \cdot 0,289 \cdot 113 + 0,289^2 \cdot 404}{19}
+\right] \approx 0,0052
+\]</span></p>
+<hr>
+</section>
+<section id="erro-padrão-3" class="level3">
+<h3 class="anchored" data-anchor-id="erro-padrão-3">📉 Erro Padrão</h3>
+<p><span class="math display">\[
+\hat{EP[p]} = \sqrt{\hat{V[p]}} = \sqrt{0,0052} \approx 0,072 \quad (7,2\%)
+\]</span></p>
+<hr>
+</section>
+<section id="intervalo-de-confiança-de-95" class="level3">
+<h3 class="anchored" data-anchor-id="intervalo-de-confiança-de-95">📏 Intervalo de Confiança de 95%</h3>
+<p>Com <span class="math inline">\(t_{19} \approx 2,045\)</span>:</p>
+<p><span class="math display">\[
+IC_{95\%} = 0,289 \pm 2,045 \cdot 0,072 = (0,142;\ 0,436)
+\]</span></p>
+<p>Ou, em porcentagem:</p>
+<p><span class="math display">\[
+IC_{95\%} = (14,2\%,\ 43,6\%)
+\]</span></p>
+<hr>
+</section>
+<section id="conclusão" class="level3">
+<h3 class="anchored" data-anchor-id="conclusão">✅ Conclusão</h3>
+<p>A estimativa da proporção de pessoas que consultaram um médico no último ano é de <strong>28,9%</strong>, e o intervalo de confiança de 95% indica que essa proporção <strong>pode estar entre 14,2% e 43,6%</strong>, com base na amostra por clusters.</p>
+<p>Representação Ilustrativa: <img src="Imagem/Semana7_aula4_estimador_proporcao_clusters.png" class="img-fluid" alt="Quadro da aula 04 - Semana 7"></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
