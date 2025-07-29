@@ -1,0 +1,13 @@
+---
+title: "Amostragem CE302"
+Author: Lucas Magalhães Ast
+format: html
+---
+
+# Bem-vindo!
+
+Este site contém os resumos e anotações das aulas da disciplina **CE302 - Técnicas de Amostragem**, ministrada pelo Prof. Ary Elias Sabbag Júnior.
+
+As anotações e resumos foram feitos no período do 1º Semestre de 2025, sendo que a disciplina é referente ao 3º Período do curso de Estatística e Ciência de Dados - UFPR.
+
+Navegue pelas semanas no menu acima para acessar os conteúdos.

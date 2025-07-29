@@ -1,0 +1,35 @@
+project:
+  type: website
+
+website:
+  title: "Amostragem CE302"
+  navbar:
+    left: 
+      - href: index.qmd
+        text: Início
+      - href: Semana1.qmd
+        text: Semana 1
+      - href: Semana2.qmd
+        text: Semana 2
+      - href: Semana3.qmd
+        text: Semana 3
+      - href: Semana4.qmd
+        text: Semana 4
+      - href: Semana5.qmd
+        text: Semana 5
+      - href: Semana6.qmd
+        text: Semana 6
+      - href: Semana7.qmd
+        text: Semana 7
+      - href: Semana8.qmd
+        text: Semana 8
+      - href: Semana9.qmd
+        text: Semana 9
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    localization:
+      toc-title: "Índice"

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Lucas Magalhães Ast">
 
-<title>Semana 6</title>
+<title>Semana 6 – Amostragem CE302</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,17 +24,50 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="Semana6_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Semana6_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="Semana6_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="Semana6_files/libs/quarto-html/popper.min.js"></script>
-<script src="Semana6_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Semana6_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Semana6_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Semana6_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Semana6_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Semana6_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Semana6_files/libs/bootstrap/bootstrap-9f11b411ed8a9ed7388199b20b46d2e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-96c94cebd92d62c19c23134a3362f02c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -68,37 +101,103 @@ window.Quarto = {
 
 </head>
 
-<body class="quarto-light">
+<body class="nav-fixed quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Amostragem CE302</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Início</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana1.html"> 
+<span class="menu-text">Semana 1</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana2.html"> 
+<span class="menu-text">Semana 2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana3.html"> 
+<span class="menu-text">Semana 3</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana4.html"> 
+<span class="menu-text">Semana 4</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana5.html"> 
+<span class="menu-text">Semana 5</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./Semana6.html" aria-current="page"> 
+<span class="menu-text">Semana 6</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana7.html"> 
+<span class="menu-text">Semana 7</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana8.html"> 
+<span class="menu-text">Semana 8</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Semana9.html"> 
+<span class="menu-text">Semana 9</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#semana-6" id="toc-semana-6" class="nav-link active" data-scroll-target="#semana-6">Semana 6</a></li>
   <li><a href="#aula-01-cálculo-do-tamanho-da-amostra-para-uma-proporção" id="toc-aula-01-cálculo-do-tamanho-da-amostra-para-uma-proporção" class="nav-link" data-scroll-target="#aula-01-cálculo-do-tamanho-da-amostra-para-uma-proporção">Aula 01 – Cálculo do Tamanho da Amostra para uma Proporção</a>
   <ul class="collapse">
-  <li><a href="#objetivo-da-aula" id="toc-objetivo-da-aula" class="nav-link" data-scroll-target="#objetivo-da-aula">🎯 Objetivo da Aula</a></li>
-  <li><a href="#fundamentação-teórica" id="toc-fundamentação-teórica" class="nav-link" data-scroll-target="#fundamentação-teórica">📐 Fundamentação Teórica</a></li>
-  <li><a href="#passo-a-passo-do-cálculo-de-n" id="toc-passo-a-passo-do-cálculo-de-n" class="nav-link" data-scroll-target="#passo-a-passo-do-cálculo-de-n">🔁 Passo a Passo do Cálculo de <span class="math inline">\(n\)</span></a></li>
-  <li><a href="#interpretação-gráfica" id="toc-interpretação-gráfica" class="nav-link" data-scroll-target="#interpretação-gráfica">📊 Interpretação Gráfica</a></li>
-  <li><a href="#observações" id="toc-observações" class="nav-link" data-scroll-target="#observações">🧠 Observações</a></li>
+  <li><a href="#objetivo-da-aula" id="toc-objetivo-da-aula" class="nav-link" data-scroll-target="#objetivo-da-aula">Objetivo da Aula</a></li>
+  <li><a href="#fundamentação-teórica" id="toc-fundamentação-teórica" class="nav-link" data-scroll-target="#fundamentação-teórica">Fundamentação Teórica</a></li>
+  <li><a href="#passo-a-passo-do-cálculo-de-n" id="toc-passo-a-passo-do-cálculo-de-n" class="nav-link" data-scroll-target="#passo-a-passo-do-cálculo-de-n">Passo a Passo do Cálculo de <span class="math inline">\(n\)</span></a></li>
+  <li><a href="#interpretação-gráfica" id="toc-interpretação-gráfica" class="nav-link" data-scroll-target="#interpretação-gráfica">Interpretação Gráfica</a></li>
+  <li><a href="#observações" id="toc-observações" class="nav-link" data-scroll-target="#observações">Observações</a></li>
   </ul></li>
   <li><a href="#aula-02---exemplo-cálculo-do-tamanho-da-amostra-para-uma-proporção" id="toc-aula-02---exemplo-cálculo-do-tamanho-da-amostra-para-uma-proporção" class="nav-link" data-scroll-target="#aula-02---exemplo-cálculo-do-tamanho-da-amostra-para-uma-proporção">Aula 02 - Exemplo: Cálculo do Tamanho da Amostra para uma Proporção</a>
   <ul class="collapse">
-  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">🎯 Objetivo</a></li>
-  <li><a href="#informações-fornecidas" id="toc-informações-fornecidas" class="nav-link" data-scroll-target="#informações-fornecidas">🧠 Informações fornecidas:</a></li>
-  <li><a href="#cálculo-do-tamanho-da-amostra-piloto" id="toc-cálculo-do-tamanho-da-amostra-piloto" class="nav-link" data-scroll-target="#cálculo-do-tamanho-da-amostra-piloto">📐 Cálculo do Tamanho da Amostra Piloto</a></li>
-  <li><a href="#correção-para-população-finita" id="toc-correção-para-população-finita" class="nav-link" data-scroll-target="#correção-para-população-finita">🔁 Correção para População Finita</a></li>
-  <li><a href="#proporção-estimada-com-a-amostra-piloto" id="toc-proporção-estimada-com-a-amostra-piloto" class="nav-link" data-scroll-target="#proporção-estimada-com-a-amostra-piloto">📊 Proporção Estimada com a Amostra Piloto</a></li>
-  <li><a href="#cálculo-do-erro-padrão-da-proporção" id="toc-cálculo-do-erro-padrão-da-proporção" class="nav-link" data-scroll-target="#cálculo-do-erro-padrão-da-proporção">🧮 Cálculo do Erro Padrão da Proporção</a></li>
-  <li><a href="#intervalo-de-confiança-para-p" id="toc-intervalo-de-confiança-para-p" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-p">📏 Intervalo de Confiança para <span class="math inline">\(p\)</span></a></li>
-  <li><a href="#estimativa-do-total-populacional" id="toc-estimativa-do-total-populacional" class="nav-link" data-scroll-target="#estimativa-do-total-populacional">📈 Estimativa do Total Populacional</a></li>
+  <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
+  <li><a href="#informações-fornecidas" id="toc-informações-fornecidas" class="nav-link" data-scroll-target="#informações-fornecidas">Informações fornecidas:</a></li>
+  <li><a href="#cálculo-do-tamanho-da-amostra-piloto" id="toc-cálculo-do-tamanho-da-amostra-piloto" class="nav-link" data-scroll-target="#cálculo-do-tamanho-da-amostra-piloto">Cálculo do Tamanho da Amostra Piloto</a></li>
+  <li><a href="#correção-para-população-finita" id="toc-correção-para-população-finita" class="nav-link" data-scroll-target="#correção-para-população-finita">Correção para População Finita</a></li>
+  <li><a href="#proporção-estimada-com-a-amostra-piloto" id="toc-proporção-estimada-com-a-amostra-piloto" class="nav-link" data-scroll-target="#proporção-estimada-com-a-amostra-piloto">Proporção Estimada com a Amostra Piloto</a></li>
+  <li><a href="#cálculo-do-erro-padrão-da-proporção" id="toc-cálculo-do-erro-padrão-da-proporção" class="nav-link" data-scroll-target="#cálculo-do-erro-padrão-da-proporção">Cálculo do Erro Padrão da Proporção</a></li>
+  <li><a href="#intervalo-de-confiança-para-p" id="toc-intervalo-de-confiança-para-p" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-p">Intervalo de Confiança para <span class="math inline">\(p\)</span></a></li>
+  <li><a href="#estimativa-do-total-populacional" id="toc-estimativa-do-total-populacional" class="nav-link" data-scroll-target="#estimativa-do-total-populacional">Estimativa do Total Populacional</a></li>
   </ul></li>
   </ul>
 </nav>
-</div>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -132,12 +231,12 @@ window.Quarto = {
 <section id="aula-01-cálculo-do-tamanho-da-amostra-para-uma-proporção" class="level2">
 <h2 class="anchored" data-anchor-id="aula-01-cálculo-do-tamanho-da-amostra-para-uma-proporção"><a href="https://youtu.be/BffiFiqDnZg?si=uAk9xnpLQgrezxhK">Aula 01 – Cálculo do Tamanho da Amostra para uma Proporção</a></h2>
 <section id="objetivo-da-aula" class="level3">
-<h3 class="anchored" data-anchor-id="objetivo-da-aula">🎯 Objetivo da Aula</h3>
+<h3 class="anchored" data-anchor-id="objetivo-da-aula">Objetivo da Aula</h3>
 <p>Calcular o tamanho da amostra <span class="math inline">\(n\)</span> necessário para estimar uma proporção populacional <span class="math inline">\(P\)</span>, com erro máximo <span class="math inline">\(d\)</span> e nível de confiança <span class="math inline">\(1 - \alpha\)</span>.</p>
 <hr>
 </section>
 <section id="fundamentação-teórica" class="level3">
-<h3 class="anchored" data-anchor-id="fundamentação-teórica">📐 Fundamentação Teórica</h3>
+<h3 class="anchored" data-anchor-id="fundamentação-teórica">Fundamentação Teórica</h3>
 <p>Queremos controlar a probabilidade de erro:</p>
 <p><span class="math display">\[
 P(|p - P| \ge d) = \alpha
@@ -164,7 +263,7 @@ d = z \cdot EP[p]
 <hr>
 </section>
 <section id="passo-a-passo-do-cálculo-de-n" class="level3">
-<h3 class="anchored" data-anchor-id="passo-a-passo-do-cálculo-de-n">🔁 Passo a Passo do Cálculo de <span class="math inline">\(n\)</span></h3>
+<h3 class="anchored" data-anchor-id="passo-a-passo-do-cálculo-de-n">Passo a Passo do Cálculo de <span class="math inline">\(n\)</span></h3>
 <ol type="1">
 <li>Começamos com:</li>
 </ol>
@@ -185,17 +284,17 @@ n_0 = \left( \frac{z}{d} \right)^2 \cdot p q
 <hr>
 </section>
 <section id="interpretação-gráfica" class="level3">
-<h3 class="anchored" data-anchor-id="interpretação-gráfica">📊 Interpretação Gráfica</h3>
+<h3 class="anchored" data-anchor-id="interpretação-gráfica">Interpretação Gráfica</h3>
 <p>A curva normal tem média <span class="math inline">\(P\)</span> e desvio padrão <span class="math inline">\(EP[p]\)</span>.</p>
 <p>Visualmente:<br>
 - Os limites do intervalo são <span class="math inline">\(P \pm d\)</span>.<br>
 - A região central representa a <strong>confiança</strong> <span class="math inline">\(1 - \alpha\)</span>.<br>
 - As caudas (esquerda e direita) representam <span class="math inline">\(\alpha/2\)</span> cada uma.</p>
-<p>Representação Ilustrativa: <img src="Imagem/Semana6_aula01_calculo_tamanho_amostra_proporcao.png" class="img-fluid" alt="Quadro da aula 01 - Semana 6"></p>
+<p>Quadro da aula: <img src="Imagem/Semana6_aula01_calculo_tamanho_amostra_proporcao.png" class="img-fluid" alt="Quadro da aula 01 - Semana 6"></p>
 <hr>
 </section>
 <section id="observações" class="level3">
-<h3 class="anchored" data-anchor-id="observações">🧠 Observações</h3>
+<h3 class="anchored" data-anchor-id="observações">Observações</h3>
 <ul>
 <li>Quanto <strong>menor o erro</strong> <span class="math inline">\(d\)</span>, <strong>maior</strong> será o tamanho da amostra necessário.</li>
 <li>O tamanho da população <span class="math inline">\(N\)</span> afeta a correção de população finita.</li>
@@ -208,12 +307,12 @@ n_0 = \left( \frac{z}{d} \right)^2 \cdot p q
 <h2 class="anchored" data-anchor-id="aula-02---exemplo-cálculo-do-tamanho-da-amostra-para-uma-proporção"><a href="https://youtu.be/hRHveMyHx0Q?si=FWyvB7YTf1y4wTHG">Aula 02 - Exemplo: Cálculo do Tamanho da Amostra para uma Proporção</a></h2>
 <hr>
 <section id="objetivo" class="level3">
-<h3 class="anchored" data-anchor-id="objetivo">🎯 Objetivo</h3>
+<h3 class="anchored" data-anchor-id="objetivo">Objetivo</h3>
 <p>Determinar o <strong>tamanho da amostra <span class="math inline">\(n\)</span></strong> necessário para estimar a proporção populacional <span class="math inline">\(P\)</span>, com erro máximo tolerado <span class="math inline">\(d\)</span> e nível de confiança de 95%.</p>
 <hr>
 </section>
 <section id="informações-fornecidas" class="level3">
-<h3 class="anchored" data-anchor-id="informações-fornecidas">🧠 Informações fornecidas:</h3>
+<h3 class="anchored" data-anchor-id="informações-fornecidas">Informações fornecidas:</h3>
 <ul>
 <li>População: <span class="math inline">\(N = 3200\)</span></li>
 <li>Nível de confiança: <span class="math inline">\(1 - \alpha = 0{,}95 \Rightarrow z = 1{,}96\)</span></li>
@@ -223,7 +322,7 @@ n_0 = \left( \frac{z}{d} \right)^2 \cdot p q
 <hr>
 </section>
 <section id="cálculo-do-tamanho-da-amostra-piloto" class="level3">
-<h3 class="anchored" data-anchor-id="cálculo-do-tamanho-da-amostra-piloto">📐 Cálculo do Tamanho da Amostra Piloto</h3>
+<h3 class="anchored" data-anchor-id="cálculo-do-tamanho-da-amostra-piloto">Cálculo do Tamanho da Amostra Piloto</h3>
 <p>Utilizamos a fórmula:</p>
 <p><span class="math display">\[
 n_0 = \left( \frac{z}{d} \right)^2 \cdot pq
@@ -235,7 +334,7 @@ n_0 = \left( \frac{1{,}96}{0{,}05} \right)^2 \cdot \frac{1}{4} = 384{,}16
 <hr>
 </section>
 <section id="correção-para-população-finita" class="level3">
-<h3 class="anchored" data-anchor-id="correção-para-população-finita">🔁 Correção para População Finita</h3>
+<h3 class="anchored" data-anchor-id="correção-para-população-finita">Correção para População Finita</h3>
 <p>Aplicamos a correção:</p>
 <p><span class="math display">\[
 n = \frac{n_0}{1 + \frac{n_0 - 1}{N}} = \frac{384{,}16}{1 + \frac{383{,}16}{3200}} \approx 343
@@ -243,7 +342,7 @@ n = \frac{n_0}{1 + \frac{n_0 - 1}{N}} = \frac{384{,}16}{1 + \frac{383{,}16}{3200
 <hr>
 </section>
 <section id="proporção-estimada-com-a-amostra-piloto" class="level3">
-<h3 class="anchored" data-anchor-id="proporção-estimada-com-a-amostra-piloto">📊 Proporção Estimada com a Amostra Piloto</h3>
+<h3 class="anchored" data-anchor-id="proporção-estimada-com-a-amostra-piloto">Proporção Estimada com a Amostra Piloto</h3>
 <p>Com a amostra de tamanho <span class="math inline">\(n = 343\)</span>, foram observados <span class="math inline">\(a = 145\)</span> indivíduos com a característica:</p>
 <p><span class="math display">\[
 p = \frac{145}{343} = 0{,}42 \quad , \quad q = 1 - p = 0{,}58
@@ -251,7 +350,7 @@ p = \frac{145}{343} = 0{,}42 \quad , \quad q = 1 - p = 0{,}58
 <hr>
 </section>
 <section id="cálculo-do-erro-padrão-da-proporção" class="level3">
-<h3 class="anchored" data-anchor-id="cálculo-do-erro-padrão-da-proporção">🧮 Cálculo do Erro Padrão da Proporção</h3>
+<h3 class="anchored" data-anchor-id="cálculo-do-erro-padrão-da-proporção">Cálculo do Erro Padrão da Proporção</h3>
 <p>Usamos a seguinte fórmula com correção finita e correção adicional:</p>
 <p><span class="math display">\[
 EP[p] = \sqrt{ \frac{N - n}{N} } \cdot \sqrt{ \frac{pq}{n - 1} } + \frac{1}{2n}
@@ -263,7 +362,7 @@ EP[p] = \sqrt{ \frac{3200 - 343}{3200} } \cdot \sqrt{ \frac{0{,}42 \cdot 0{,}58}
 <hr>
 </section>
 <section id="intervalo-de-confiança-para-p" class="level3">
-<h3 class="anchored" data-anchor-id="intervalo-de-confiança-para-p">📏 Intervalo de Confiança para <span class="math inline">\(p\)</span></h3>
+<h3 class="anchored" data-anchor-id="intervalo-de-confiança-para-p">Intervalo de Confiança para <span class="math inline">\(p\)</span></h3>
 <p><span class="math display">\[
 IC(p) = 0{,}42 \pm 1{,}96 \cdot 0{,}0435 = (0{,}337,\ 0{,}503)
 \]</span></p>
@@ -274,7 +373,7 @@ IC(p) = (0{,}37,\ 0{,}47)
 <hr>
 </section>
 <section id="estimativa-do-total-populacional" class="level3">
-<h3 class="anchored" data-anchor-id="estimativa-do-total-populacional">📈 Estimativa do Total Populacional</h3>
+<h3 class="anchored" data-anchor-id="estimativa-do-total-populacional">Estimativa do Total Populacional</h3>
 <p>Estimador do total:</p>
 <p><span class="math display">\[
 \hat{A} = N \cdot p = 3200 \cdot 0{,}42 = 1344
@@ -284,13 +383,14 @@ IC(p) = (0{,}37,\ 0{,}47)
 IC(\hat{A}) = (3200 \cdot 0{,}37,\ 3200 \cdot 0{,}47) = (1184,\ 1504)
 \]</span></p>
 <hr>
-<p>Representação Ilustrativa: <img src="Imagem/Semana6_aula02_calculo_tamanho_amostra_proporcao.png" class="img-fluid" alt="Quadro da aula 02 - Semana 6"></p>
+<p>Quadro da aula: <img src="Imagem/Semana6_aula02_calculo_tamanho_amostra_proporcao.png" class="img-fluid" alt="Quadro da aula 02 - Semana 6"></p>
 <hr>
+
+
 </section>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -363,7 +463,7 @@ IC(\hat{A}) = (3200 \cdot 0{,}37,\ 3200 \cdot 0{,}47) = (1184,\ 1504)
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/lucas-magalhaes\.quarto\.pub\/amostragem-ce302");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
